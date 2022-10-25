@@ -26,6 +26,8 @@ public class SpaceShipThruster : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (InputHandler.Instance == null) return;
+
         if (transform.position.y < topBorder)
         {
             if (InputHandler.Instance.MouseHold)

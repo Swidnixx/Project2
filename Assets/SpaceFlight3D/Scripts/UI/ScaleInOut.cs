@@ -9,27 +9,18 @@ public class ScaleInOut : MonoBehaviour
     public float speed = 1;
     new RectTransform transform;
 
-    Vector2 topLeft = Vector2.up;
-    Vector2 bottomLeft = Vector2.zero;
-    Vector2 topRight = Vector2.one;
-    Vector2 bottomRight = Vector2.right;
-
     private void Start()
     {
         transform = (RectTransform)base.transform;
-
-        transform.anchorMin = topLeft;
-        transform.anchorMax = topLeft;
     }
 
-    public void Scale()
+    public void ScaleUp()
     {
         StartCoroutine(ScaleIn());
     }
-    public void Reset()
+    public void ScaleDown()
     {
-        transform.anchorMin = topLeft;
-        transform.anchorMax = topLeft;
+        StartCoroutine(ScaleOut());
     }
 
     IEnumerator ScaleIn()
@@ -37,16 +28,29 @@ public class ScaleInOut : MonoBehaviour
         float t = 0;
         while(t<1)
         {
-            Vector2 lerp = Vector2.Lerp(topLeft, bottomRight, t);
-            transform.anchorMin = new Vector2(topLeft.x, lerp.y);
-            transform.anchorMax = new Vector2(lerp.x, topLeft.y);
+            Vector2 lerp = Vector2.Lerp(Vector3.zero, Vector3.one, t);
+            transform.localScale = lerp;
 
             t += Time.deltaTime * speed;
 
             yield return null;
         }
 
-        transform.anchorMin = bottomLeft;
-        transform.anchorMax = topRight;
+        transform.localScale = Vector3.one;
+    }
+    IEnumerator ScaleOut()
+    {
+        float t = 0;
+        while (t < 1)
+        {
+            Vector2 lerp = Vector2.Lerp(Vector3.one, Vector3.zero, t);
+            transform.localScale = lerp;
+
+            t += Time.deltaTime * speed;
+
+            yield return null;
+        }
+
+        transform.localScale = Vector3.zero;
     }
 }

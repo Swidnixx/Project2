@@ -25,6 +25,8 @@ namespace RopeMechanim
  
         public LineRenderer lr;
 
+        public float RopeLength { get { return ropeLength; } set { ropeLength = value; } }
+
         void Awake()
         {
             ChangeState(new RolledUpState(this));

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/MainMenu.unity
+    guid: 93623373d51d7f14695517f6d08e4aea
+  - enabled: 1
     path: Assets/SpaceFlight3D/Scenes/TutorialScene.unity
     guid: 6e2209294bbe85e44821b8550e185005
   - enabled: 1

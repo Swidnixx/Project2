@@ -14,6 +14,8 @@ public class SpaceShipSteer : MonoBehaviour
 
     private void Update()
     {
+        if (InputHandler.Instance == null) return;
+
         float leftRight = InputHandler.Instance.LeftRight;
 
         transform.rotation = Quaternion.Lerp(transform.rotation, 
