@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpaceShipIncrementalThruster : SpaceShipThruster
+public class SpaceShipIncrementalEngine : SpaceShipEngine
 {
     public float powerRiseSpeed = 1;
     public float powerFallSpeed = 1;
@@ -14,7 +14,7 @@ public class SpaceShipIncrementalThruster : SpaceShipThruster
 
     protected override void AccumulateForce()
     {
-        if (InputHandler.Instance.MouseHold)
+        if (Push)
         {
             power = Mathf.MoveTowards(power, MaxPower, Time.deltaTime * powerRiseSpeed);
         }

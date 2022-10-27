@@ -13,12 +13,12 @@ public class SpaceShipDestroyer : MonoBehaviour
 
     public UnityEvent onCrash;
 
-    SpaceShipThruster thruster;
+    SpaceShipEngine thruster;
     SpaceShipSteer steer;
 
     private void Start()
     {
-        thruster = GetComponent<SpaceShipThruster>();
+        thruster = GetComponent<SpaceShipEngine>();
         steer = GetComponent<SpaceShipSteer>();
     }
 
