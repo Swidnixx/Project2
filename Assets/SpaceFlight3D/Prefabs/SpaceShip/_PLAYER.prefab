@@ -79,7 +79,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e8c02764bb9f446a4065e2734f1101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 2.5
+  maxPower: 0.5
+  topBorder: 10
+  FuelUsagePerSecond: 10
 --- !u!114 &4653302612603044891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAngle: 45
   rotateSpeed: 2
+  flipLeftRight: 0
 --- !u!136 &4653302612603044890
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -217,8 +220,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 17.113195, z: 44.036934}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
