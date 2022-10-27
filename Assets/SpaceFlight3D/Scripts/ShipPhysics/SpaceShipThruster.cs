@@ -4,11 +4,12 @@ using UnityEngine;
 public class SpaceShipThruster : MonoBehaviour
 {
     #region Access Fields
-    public float Power { get { return power; } set { power = value; } }
+    public float MaxPower { get { return maxPower; } set { maxPower = value; } }
     public float FuelUsage { get { return FuelUsagePerSecond; } set { FuelUsagePerSecond = value; } }
     #endregion
 
-    [SerializeField] float power = 0.5f;
+    [SerializeField] float maxPower = 0.5f;
+    protected float power;
     [SerializeField] float topBorder = 10;
     [SerializeField] float FuelUsagePerSecond = 10;
 
@@ -17,35 +18,85 @@ public class SpaceShipThruster : MonoBehaviour
     FuelTank tank;
 
     #region Unity Callbacks
-    private void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
         particleController = GetComponentInChildren<EnginesParticleController>();
         tank = GetComponentInChildren<FuelTank>();
     }
 
-    private void FixedUpdate()
+    protected virtual void Update()
     {
+        Debug.DrawLine(transform.position, transform.position + transform.up * power / rb.mass, Color.green);
+
         if (InputHandler.Instance == null) return;
 
-        if (transform.position.y < topBorder)
+        AccumulateForce();
+    }
+
+    private void FixedUpdate()
+    {
+
+        //if (transform.position.y < topBorder)
+        //{
+        //    if (InputHandler.Instance.MouseHold)
+        //    {
+        //        Thrust();
+        //    }
+        //    else
+        //    {
+        //        Steady();
+        //    }
+
+        //}
+
+        Thrust();
+        HandleParticle();
+    }
+    #endregion
+
+    #region Adjustable Overidable Force Accumulating methods
+    protected virtual void AccumulateForce()
+    {
+        if(InputHandler.Instance.MouseHold)
         {
-            if (InputHandler.Instance.MouseHold)
-            {
-                float availableFuel = tank.UseFuel(FuelUsagePerSecond * Time.fixedDeltaTime);
+            power = maxPower;
+        }
+        else
+        {
+            power = 0;
+        }
+    }
+    #endregion
 
-                if (availableFuel > 0)
-                {
-                    float actualPower = availableFuel / (FuelUsagePerSecond * Time.fixedDeltaTime);
-                    rb.AddForce(transform.up * power * rb.mass * actualPower);
-                    particleController.Thrust(); 
-                }
-            }
-            else
-            {
-                particleController.Steady();
-            }
+    #region Mechanics Methods
+    private void Thrust()
+    {
+        float availableFuel = tank.UseFuel(FuelUsagePerSecond * Time.fixedDeltaTime);
 
+        if (availableFuel > 0)
+        {
+            // Available Fuel will always be less or equal to FuelUsage over time
+            float actualPower = availableFuel / (FuelUsagePerSecond * Time.fixedDeltaTime);
+            rb.AddForce(transform.up * power * rb.mass * actualPower);
+            //particleController.Thrust();
+        }
+    }
+
+    private void Steady()
+    {
+        //particleController.Steady();
+    }
+
+    private void HandleParticle()
+    {
+        if(power > 1)
+        {
+            particleController.Thrust();
+        }
+        else
+        {
+            particleController.Steady();
         }
     }
     #endregion

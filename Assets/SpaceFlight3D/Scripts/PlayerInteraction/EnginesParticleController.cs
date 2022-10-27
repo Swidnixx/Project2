@@ -33,7 +33,7 @@ public class EnginesParticleController : MonoBehaviour
     {
         velocityModuleL.z = new ParticleSystem.MinMaxCurve(-1f);
         velocityModuleR.z = new ParticleSystem.MinMaxCurve(-1f);
-        emissionModuleL.rateOverTime = new ParticleSystem.MinMaxCurve(1);
-        emissionModuleR.rateOverTime = new ParticleSystem.MinMaxCurve(1);
+        emissionModuleL.rateOverTime = new ParticleSystem.MinMaxCurve(5);
+        emissionModuleR.rateOverTime = new ParticleSystem.MinMaxCurve(5);
     }
 }

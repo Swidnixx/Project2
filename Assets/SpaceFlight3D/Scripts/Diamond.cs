@@ -8,7 +8,7 @@ public class Diamond : MonoBehaviour
     public ParticleSystem destroyEffect;
     public UnityEvent onDestroy;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
