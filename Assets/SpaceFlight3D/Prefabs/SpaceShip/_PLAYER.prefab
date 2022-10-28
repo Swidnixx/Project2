@@ -82,6 +82,7 @@ MonoBehaviour:
   maxPower: 0.5
   topBorder: 10
   FuelUsagePerSecond: 10
+  tank: {fileID: 0}
 --- !u!114 &4653302612603044891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +221,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 14.814073, z: -0.91048163}
+  - {x: 0, y: 13.007087, z: -0.00011433588}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

@@ -41,7 +41,7 @@ public class GameSequencer : TextMessageDisplayer
         }
         else
         {
-
+            //Need to fix it bcuz Updaters calling Update during cooldown will fail (especially single usage)
         }
     }
 

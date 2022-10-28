@@ -4576,12 +4576,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456698285}
   m_Mesh: {fileID: -8302102485596996044, guid: f68f58f6a3d85be4189f9daac6cd59a4, type: 3}
---- !u!198 &1470079749 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 132660160991246498, guid: c8fc666337c8509488d08ec5089f98ab,
-    type: 3}
-  m_PrefabInstance: {fileID: 132660162340395943}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1528717957
 GameObject:
   m_ObjectHideFlags: 0
@@ -22813,71 +22807,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3117229314768359538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3117229314768359542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96b3af49d8614c64b9f1a1264f359df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroySpeed: 2
-  crashEffect: {fileID: 1470079749}
-  onCrash:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1826055274}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1411290249849003002}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1147985400}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 982889750}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!54 &3117229314768359539
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22892,7 +22821,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 56
   m_CollisionDetection: 0
 --- !u!95 &3117229314768359540
 Animator:
@@ -22936,13 +22865,11 @@ GameObject:
   - component: {fileID: 3117229314768359543}
   - component: {fileID: 3117229314768359539}
   - component: {fileID: 3117229314768359541}
-  - component: {fileID: 3117229314768359551}
   - component: {fileID: 3117229314768359546}
   - component: {fileID: 3117229314768359545}
   - component: {fileID: 3117229314768359544}
   - component: {fileID: 3117229314768359540}
   - component: {fileID: 3117229314768359550}
-  - component: {fileID: 3117229314768359538}
   - component: {fileID: 3117229314768359547}
   m_Layer: 0
   m_Name: SpaceShipDoubleEngine
@@ -23128,21 +23055,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   capacity: 99
---- !u!114 &3117229314768359551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3117229314768359542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb42f305f70a6324ab964fe8ec0d5a79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxAngle: 90
-  rotateSpeed: 4
-  flipLeftRight: 1
 --- !u!4 &3226871973595880334
 Transform:
   m_ObjectHideFlags: 0
