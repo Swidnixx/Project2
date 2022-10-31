@@ -68,14 +68,14 @@ public class SpaceShipEngine : MonoBehaviour
 
     private void HandleParticle()
     {
-        if(power > 1)
-        {
-            particleController.Thrust();
-        }
-        else
-        {
-            particleController.Steady();
-        }
+            if (power > 1)
+            {
+                particleController.Thrust();
+            }
+            else
+            {
+                particleController.Steady();
+            } 
     }
     #endregion
 }

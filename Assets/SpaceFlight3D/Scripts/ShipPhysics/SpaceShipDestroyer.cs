@@ -13,14 +13,14 @@ public class SpaceShipDestroyer : MonoBehaviour
 
     public UnityEvent onCrash;
 
-    SpaceShipEngine thruster;
-    SpaceShipSteer steer;
+    //SpaceShipEngine thruster;
+    //SpaceShipSteer steer;
 
-    private void Start()
-    {
-        thruster = GetComponent<SpaceShipEngine>();
-        steer = GetComponent<SpaceShipSteer>();
-    }
+    //private void Start()
+    //{
+    //    thruster = GetComponent<SpaceShipEngine>();
+    //    steer = GetComponent<SpaceShipSteer>();
+    //}
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -34,8 +34,8 @@ public class SpaceShipDestroyer : MonoBehaviour
     private void Crash()
     {
         crashEffect.Play();
-        thruster.enabled = false;
-        steer.enabled = false;
+        //thruster.enabled = false;
+        //steer.enabled = false;
         onCrash?.Invoke();
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnginesParticleController : MonoBehaviour
 {
+    bool thrusting;
+
     public ParticleSystem leftEngine;
     public ParticleSystem rightEngine;
 
@@ -22,18 +24,28 @@ public class EnginesParticleController : MonoBehaviour
 
     public void Thrust()
     {
-        velocityModuleL.z = new ParticleSystem.MinMaxCurve(-2.5f);
-        velocityModuleR.z = new ParticleSystem.MinMaxCurve(-2.5f);
-        emissionModuleL.rateOverTime = new ParticleSystem.MinMaxCurve(50);        
-        emissionModuleR.rateOverTime = new ParticleSystem.MinMaxCurve(50);
+        if (!thrusting)
+        {
+            thrusting = true;
+
+            velocityModuleL.z = new ParticleSystem.MinMaxCurve(-15f);
+            velocityModuleR.z = new ParticleSystem.MinMaxCurve(-15f);
+            emissionModuleL.rateOverTime = new ParticleSystem.MinMaxCurve(150);
+            emissionModuleR.rateOverTime = new ParticleSystem.MinMaxCurve(150); 
+        }
 
     }
 
     public void Steady()
     {
-        velocityModuleL.z = new ParticleSystem.MinMaxCurve(-1f);
-        velocityModuleR.z = new ParticleSystem.MinMaxCurve(-1f);
-        emissionModuleL.rateOverTime = new ParticleSystem.MinMaxCurve(5);
-        emissionModuleR.rateOverTime = new ParticleSystem.MinMaxCurve(5);
+        if (thrusting)
+        {
+            thrusting = false;
+
+            velocityModuleL.z = new ParticleSystem.MinMaxCurve(-1f);
+            velocityModuleR.z = new ParticleSystem.MinMaxCurve(-1f);
+            emissionModuleL.rateOverTime = new ParticleSystem.MinMaxCurve(5);
+            emissionModuleR.rateOverTime = new ParticleSystem.MinMaxCurve(5); 
+        }
     }
 }

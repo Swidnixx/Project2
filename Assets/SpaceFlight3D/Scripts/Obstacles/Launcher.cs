@@ -6,9 +6,9 @@ public class Launcher : MonoBehaviour
 {
     public Transform direction;
     public Rigidbody rb;
-
     public bool launchOnStart;
 
+    public float speed = 1;
     private void Start()
     {
         if(launchOnStart)
@@ -19,6 +19,7 @@ public class Launcher : MonoBehaviour
 
     public void Launch()
     {
-        rb.AddForce((direction.position - transform.position) * rb.mass);
+        Debug.Log("Launched " + (direction.position - transform.position).normalized);
+        rb.AddForce((direction.position - transform.position).normalized * rb.mass * speed, ForceMode.Impulse);
     }
 }

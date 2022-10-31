@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5702295004141955615}
   - component: {fileID: 5702295004141955614}
   - component: {fileID: 2290629367546995817}
+  - component: {fileID: 254562840848673753}
   m_Layer: 12
   m_Name: MasiveBall
   m_TagString: Untagged
@@ -129,6 +130,19 @@ MonoBehaviour:
   direction: {fileID: 7702798157021602565}
   rb: {fileID: 5702295004141955614}
   launchOnStart: 1
+  speed: 10
+--- !u!114 &254562840848673753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5702295004141955612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0d5cfa85e3b1d4db04fb562537252b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6580258784611287493
 GameObject:
   m_ObjectHideFlags: 0
