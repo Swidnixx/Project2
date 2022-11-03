@@ -31,7 +31,7 @@ public class SpaceShipDestroyer : MonoBehaviour
         }
     }
 
-    private void Crash()
+    public void Crash()
     {
         crashEffect.Play();
         //thruster.enabled = false;

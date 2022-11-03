@@ -11,9 +11,9 @@ public class GameSequencer : TextMessageDisplayer
     public bool activateOnStartup;
     public GameEvent[] events;
 
-    int current = 0;
+    protected int current = 0;
     int previous = 0;
-    private bool cooldown;
+    protected bool cooldown;
 
     private void Start()
     {
@@ -45,7 +45,7 @@ public class GameSequencer : TextMessageDisplayer
         }
     }
 
-    IEnumerator Reset(float time)
+    protected virtual IEnumerator Reset(float time)
     {
         yield return new WaitForSeconds(time);
         events[previous].AfterCooldown?.Invoke();
