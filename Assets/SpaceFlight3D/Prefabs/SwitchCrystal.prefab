@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1324259148945673325}
   - component: {fileID: 1324259148945673327}
   - component: {fileID: 1324259148945673326}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4818,7 +4818,7 @@ GameObject:
   - component: {fileID: 1324259150930915095}
   - component: {fileID: 1324259150930915090}
   - component: {fileID: 1324259150930915091}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: SwitchCrystal
   m_TagString: Pickup
   m_Icon: {fileID: 0}
@@ -4931,3 +4931,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyEffect: {fileID: 1324259148945673327}
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls: []

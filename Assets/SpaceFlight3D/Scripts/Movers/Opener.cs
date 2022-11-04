@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Opener : MonoBehaviour
 {
+    public bool automatic;
     public bool closed = true;
     public Transform objectToMove;
     public Transform openPos;
@@ -12,17 +13,28 @@ public class Opener : MonoBehaviour
     public float speed = 1;
 
     public float closeAfterAWhile = 0;
+    public float openAfterAWhile = 0;
 
     private void Start()
     {
         if(closed)
         {
             objectToMove.position = closedPos.position;
+            if (automatic)
+            {
+                Open();
+            }
         }
         else
         {
             objectToMove.position = openPos.position;
+            if (automatic)
+            {
+                Close();
+            }
         }
+
+
     }
 
     public void Open()
@@ -39,6 +51,10 @@ public class Opener : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(Move(closedPos.position));
+        if (openAfterAWhile > 0)
+        {
+            Invoke(nameof(Open), openAfterAWhile);
+        }
     }
 
     IEnumerator Move(Vector3 pos)

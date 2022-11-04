@@ -12,4 +12,12 @@ public class BulletDestroyer : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

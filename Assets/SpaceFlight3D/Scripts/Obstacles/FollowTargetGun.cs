@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HorizontalGun : MonoBehaviour
+public class FollowTargetGun : MonoBehaviour
 {
     public Transform bulletPrefab;
 
