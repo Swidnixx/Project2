@@ -21,13 +21,13 @@ public class Button : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Something hit");
+        //Debug.Log("Something hit");
         StartCoroutine(Move(pressedPosition.position));
     }
 
     private void OnTriggerExit(Collider other)
     {
-        StartCoroutine(Move(normalPosition.position));
+        //StartCoroutine(Move(normalPosition.position));
     }
 
     IEnumerator Move(Vector3 targetPos)
