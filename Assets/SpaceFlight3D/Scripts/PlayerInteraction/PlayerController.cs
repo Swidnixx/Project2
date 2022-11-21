@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
+        if (!animator) return;
         //Debug.Log("Collision exit");
         state = PlayerState.InAir;
         animator.SetTrigger("inAir");
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!animator) return;
         //Debug.Log("Collision enter");
         state = PlayerState.Grounded;
         animator.SetTrigger("grounded");

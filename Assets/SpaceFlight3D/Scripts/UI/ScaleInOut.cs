@@ -1,17 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.Events;
 
 public class ScaleInOut : MonoBehaviour
 {
     public float speed = 1;
+    public bool openOnStart;
     new RectTransform transform;
+
+    public UnityEvent OnClose;
+    public UnityEvent OnOpen;
+
+    private void Awake()
+    {
+        transform = (RectTransform)base.transform;
+    }
 
     private void Start()
     {
-        transform = (RectTransform)base.transform;
+
+        //if(openOnStart)
+        //{
+        //    ScaleUp();
+        //}
+        //else
+        //{
+        //    ScaleDown();
+        //}
     }
 
     public void ScaleUp()
@@ -37,6 +53,7 @@ public class ScaleInOut : MonoBehaviour
         }
 
         transform.localScale = Vector3.one;
+        OnOpen?.Invoke();
     }
     IEnumerator ScaleOut()
     {
@@ -52,5 +69,6 @@ public class ScaleInOut : MonoBehaviour
         }
 
         transform.localScale = Vector3.zero;
+        OnClose?.Invoke();
     }
 }

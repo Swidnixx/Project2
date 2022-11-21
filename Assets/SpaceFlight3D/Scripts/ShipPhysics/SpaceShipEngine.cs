@@ -41,7 +41,7 @@ public class SpaceShipEngine : MonoBehaviour
     #region Adjustable Overidable Force Accumulating methods
     protected virtual void AccumulateForce()
     {
-        if(Push)
+        if(Push && transform.position.y < topBorder)
         {
             power = maxPower;
         }
@@ -55,7 +55,7 @@ public class SpaceShipEngine : MonoBehaviour
     #region Mechanics Methods
     private void Thrust()
     {
-        float availableFuel = tank.UseFuel(FuelUsagePerSecond * Time.deltaTime * power/MaxPower);
+        float availableFuel = tank? tank.UseFuel(FuelUsagePerSecond * Time.deltaTime * power/MaxPower) : FuelUsagePerSecond * Time.deltaTime * power / MaxPower;
 
         if (availableFuel > 0)
         {

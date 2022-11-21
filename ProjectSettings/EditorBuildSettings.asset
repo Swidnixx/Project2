@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SpaceFlight3D/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/EndlessMoonBackground.unity
+    guid: 0d1b4857321a6ba4d893e81aa7df9b5c
   m_configObjects: {}

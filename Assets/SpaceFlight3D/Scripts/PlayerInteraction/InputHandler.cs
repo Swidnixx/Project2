@@ -8,11 +8,11 @@ public class InputHandler : Singleton<InputHandler>
     public bool MouseHold { get { return mouseHold; } }
     public float LeftRight { get { return leftRight; } }
 
-    bool mouseDown;
-    bool mouseHold;
-    float leftRight;
+    protected bool mouseDown;
+    protected bool mouseHold;
+    protected float leftRight;
 
-    private void Update()
+    protected virtual void Update()
     {
 #if UNITY_EDITOR
         if (Input.GetKey(KeyCode.Space))

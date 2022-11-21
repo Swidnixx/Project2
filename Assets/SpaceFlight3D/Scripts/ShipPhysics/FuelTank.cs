@@ -21,7 +21,7 @@ public class FuelTank : MonoBehaviour
         }
         else
         {
-            float lastFuel = Status;
+            float lastFuel = Status * capacity;
             Status = 0;
             return lastFuel;
         }

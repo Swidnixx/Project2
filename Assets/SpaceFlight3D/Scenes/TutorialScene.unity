@@ -1287,8 +1287,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 981460523957650998}
-          m_TargetAssemblyTypeName: SpaceShipThruster, Assembly-CSharp
-          m_MethodName: set_Power
+          m_TargetAssemblyTypeName: SpaceShipEngine, Assembly-CSharp
+          m_MethodName: set_MaxPower
           m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3807,6 +3807,24 @@ Transform:
   m_Father: {fileID: 838591250}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1286572954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3117229314601906536, guid: 75dc266c8fac2b0499bd32bf787b5248,
+    type: 3}
+  m_PrefabInstance: {fileID: 2800190782526945113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1286572958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286572954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb89d4ba55410d4f80ceda07e8f4830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1300946010
 GameObject:
   m_ObjectHideFlags: 0
@@ -4608,8 +4626,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 981460523957650998}
-          m_TargetAssemblyTypeName: SpaceShipThruster, Assembly-CSharp
-          m_MethodName: set_Power
+          m_TargetAssemblyTypeName: SpaceShipEngine, Assembly-CSharp
+          m_MethodName: set_MaxPower
           m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6227,7 +6245,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2800190782526945113}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1286572954}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1580bc83d9fe0947929f3f8cacd584c, type: 3}
@@ -6251,7 +6269,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2800190782526945113}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1286572954}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11e8c02764bb9f446a4065e2734f1101, type: 3}
@@ -6263,7 +6281,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2800190782526945113}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1286572954}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a717538bdcbbfe24490fc6346d801af0, type: 3}
@@ -6275,7 +6293,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2800190782526945113}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1286572954}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb42f305f70a6324ab964fe8ec0d5a79, type: 3}
@@ -6287,7 +6305,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2800190782526945113}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1286572954}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e650a71d7b0697c47b553af12e54fc24, type: 3}
@@ -6299,7 +6317,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2800190782526945113}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1286572954}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93f937dba52f85b43b0509af24d6f556, type: 3}
@@ -6551,6 +6569,11 @@ PrefabInstance:
       propertyPath: onCrash.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3117229314601906543, guid: 75dc266c8fac2b0499bd32bf787b5248,
+        type: 3}
+      propertyPath: tank
+      value: 
+      objectReference: {fileID: 981460523957651001}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75dc266c8fac2b0499bd32bf787b5248, type: 3}
 --- !u!1001 &3138326132141304069

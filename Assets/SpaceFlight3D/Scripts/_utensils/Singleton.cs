@@ -18,15 +18,14 @@ public class Singleton<T> : MonoBehaviour
 
     private void Awake()
     {
-            _instance = this.GetComponent<T>();
         if (_instance == null)
         {
-
+            _instance = this.GetComponent<T>();
         }
         else
         {
 #if UNITY_EDITOR
-            //Debug.LogError("Multiple instances of Singleton: " + this.GetType());
+            Debug.LogError("Multiple instances of Singleton: " + this.GetType());
 #endif
         }
 

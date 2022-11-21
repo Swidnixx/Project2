@@ -1776,7 +1776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 227, y: -172.2191}
+  m_AnchoredPosition: {x: 227, y: -178.85812}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177293531
@@ -9400,7 +9400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1023.8071, y: -172.2191}
+  m_AnchoredPosition: {x: 991.70667, y: -178.85812}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1392176695
@@ -12288,7 +12288,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848221809}
-  m_LocalRotation: {x: -0.03767945, y: 0.009319389, z: 0.00035141426, w: 0.99924636}
+  m_LocalRotation: {x: -0.037679426, y: 0.009319355, z: 0.00035141272, w: 0.99924636}
   m_LocalPosition: {x: 4.313, y: -1.4888539, z: -2.3275285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13072,7 +13072,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 625.40356, y: -172.2191}
+  m_AnchoredPosition: {x: 609.35333, y: -178.85812}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1940273661
@@ -13118,7 +13118,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1940273662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 319997259}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: NextScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: EndlessMoonBackground
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1940273662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19245,7 +19257,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Controls Test
 --- !u!222 &2103881972
 CanvasRenderer:
   m_ObjectHideFlags: 0
