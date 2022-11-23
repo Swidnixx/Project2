@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpaceShipStabilizer : MonoBehaviour
 {
     public float Power { get { return power; } set { value = Mathf.Clamp(value, 0, 1); power = value; } }
-    protected float Mass { get { return rb.mass + childrenBodies.Sum(x => x.mass); } }
+    protected float Mass { get { return rb.mass + childrenBodies.Sum(x => !x.isKinematic ? x.mass : 0); } }
 
     [Range(0, 1)]
     [SerializeField]protected float power = 1;

@@ -15,7 +15,7 @@ public class EnginesController : MonoBehaviour
     {
         if (InputHandler.Instance == null) return;
 
-        Debug.Log(InputHandler.Instance.MouseHold);
+        //Debug.Log(InputHandler.Instance.MouseHold);
         if(InputHandler.Instance.MouseHold)
         {
             foreach(var engine in engines)

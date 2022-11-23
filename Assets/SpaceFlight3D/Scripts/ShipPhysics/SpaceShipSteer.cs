@@ -5,7 +5,7 @@ public class SpaceShipSteer : MonoBehaviour
 {
     public float maxAngle = 45;
     public float rotateSpeed = 1;
-    public bool flipLeftRight;
+    public bool flipLeftRight = true;
 
     private void Start()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Respawner : MonoBehaviour
 {
-    public Transform player;
+    public Rigidbody player;
     public Vector3 rotation;
     Vector3 spawnPoint;
 
@@ -16,6 +16,9 @@ public class Respawner : MonoBehaviour
     public void Respawn()
     {
         // reset velocities and systems of player
+        player.velocity = Vector3.zero;
+        player.angularVelocity = Vector3.zero;
+
         player.rotation = Quaternion.Euler(rotation);
         player.position = spawnPoint;
     }

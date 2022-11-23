@@ -4,13 +4,43 @@ using UnityEngine;
 
 public class JoystickInputHandler : InputHandler
 {
-    public Joystick joystick;
-    
-    protected override void Update()
-    {
-        leftRight = joystick.Horizontal;
+    public MyJoystick joystick;
 
-        if( joystick.Vertical > 0 )
+    bool push;
+
+    private void Start()
+    {
+        joystick.OnJoystickClicked += JoystickDown;
+        joystick.OnJoystickReleased += JoystickUp;
+    }
+
+    void JoystickDown()
+    {
+        //Debug.Log("Pushing");
+        push = true;
+    }
+
+    void JoystickUp()
+    {
+        //Debug.Log("Releasing");
+        push = false;
+    }
+
+    protected override void UpdateLeftRight()
+    {
+//#if UNITY_EDITOR
+        //base.UpdateLeftRight();
+//#else
+        leftRight = joystick.Horizontal;
+//#endif
+    }
+
+    protected override void UpdateMouseHold()
+    {
+//#if UNITY_EDITOR
+//        base.UpdateMouseHold();
+//#else
+        if( push )
         {
             mouseHold = true;
         }
@@ -18,7 +48,7 @@ public class JoystickInputHandler : InputHandler
         {
             mouseHold = false;
         }
-
-        //Debug.Log("Ho: " + joystick.Horizontal + "; Ve: " + joystick.Vertical);
+//#endif
     }
+
 }

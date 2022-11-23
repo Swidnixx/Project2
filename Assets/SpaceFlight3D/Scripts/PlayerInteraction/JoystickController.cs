@@ -4,35 +4,38 @@ using UnityEngine;
 
 public class JoystickController : MonoBehaviour
 {
-    public SpaceShipEngine engine;
-    public SpaceShipSteer steer;
-    public SpaceShipStabilizer stabilizer;
     public Joystick joystick;
 
     public float maxAngle = 45;
     public float rotateSpeed = 1;
-    public bool flipLeftRight;
+    public float sidePower = 50;
+    public bool flipLeftRight = true;
 
     Rigidbody rb;
+    SpaceShipStabilizer stabilizer;
+    SpaceShipEngine engine;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //inputHandler = (JoystickInputHandler)InputHandler.Instance;
+        stabilizer = GetComponent<SpaceShipStabilizer>();
+        engine = GetComponent<SpaceShipEngine>();
     }
     float leftRight;
     private void FixedUpdate()
     {
+        //Debug.Log("LeftRightL:" + leftRight);
+        rb.AddForce(transform.right * sidePower * leftRight * (flipLeftRight?-1:1));
         #region SideForce
-        if (leftRight > 0.2)
-        {
-            rb.AddForce(transform.right * (engine.MaxPower - Physics.gravity.y * rb.mass) * leftRight);
-        }
+        //if (leftRight > 0.2)
+        //{
+        //    rb.AddForce(transform.right * (engine.MaxPower - Physics.gravity.y * rb.mass) * leftRight);
+        //}
 
-        if(leftRight < -0.2)
-        {
-            rb.AddForce(transform.right * (engine.MaxPower - Physics.gravity.y * rb.mass) * leftRight);
-        }    
+        //if(leftRight < -0.2)
+        //{
+        //    rb.AddForce(transform.right * (engine.MaxPower - Physics.gravity.y * rb.mass) * leftRight);
+        //}    
         #endregion
     }
 
@@ -44,7 +47,7 @@ public class JoystickController : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation,
             Quaternion.Euler(transform.rotation.eulerAngles.x,
                                 transform.rotation.eulerAngles.y,
-                                maxAngle * leftRight * (flipLeftRight ? -1 : 1)
+                                maxAngle * leftRight * (flipLeftRight ? 1 : -1)
                                     ), Time.deltaTime * rotateSpeed);
         #endregion
 

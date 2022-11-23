@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Singleton<T> : MonoBehaviour
+public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     // Property is only for outside
     public static T Instance
@@ -18,8 +18,9 @@ public class Singleton<T> : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null)
+        if (_instance == null || _instance == this)
         {
+            Debug.Log("InputHandler: " + this.name + " (" + this.GetType() + ")");
             _instance = this.GetComponent<T>();
         }
         else
