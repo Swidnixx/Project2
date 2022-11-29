@@ -74,7 +74,7 @@ public class ShipSetup : MonoBehaviour
         //jc.joystick = joystick;
         //currentSetUp.Add(jc);
 
-        JoystickInputHandler input = player.AddComponent<JoystickInputHandler>();
+        MyJoystickInputHandler input = player.AddComponent<MyJoystickInputHandler>();
         currentSetUp.Add(input);
         input.joystick = joystick;
     }

@@ -24,7 +24,7 @@ public class SpaceShipDestroyer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Relative velocity: " + collision.relativeVelocity.magnitude);
+        //Debug.Log("Relative velocity: " + collision.relativeVelocity.magnitude);
         if(collision.relativeVelocity.magnitude > destroySpeed || collision.transform.CompareTag("Terrain"))
         {
             Crash();

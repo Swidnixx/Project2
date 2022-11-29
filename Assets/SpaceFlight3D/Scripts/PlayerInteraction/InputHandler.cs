@@ -6,31 +6,39 @@ using UnityEngine;
 public class InputHandler : Singleton<InputHandler>
 {
     public bool MouseDown { get { return mouseDown; } }
-    public bool MouseHold { get { return mouseHold; } }
+    public float Upwards { get { return upwards; } }
     public float LeftRight { get { return leftRight; } }
+    public float Downwards {  get { return downwards; } }
 
     protected bool mouseDown;
-    protected bool mouseHold;
+    protected float upwards;
     protected float leftRight;
+    protected float downwards;
+
+    private void Start()
+    {
+        Input.gyro.enabled = true;
+    }
 
     protected virtual void Update()
     {
         //Debug.Log("Input Handler instance: " + Instance);
         UpdateMouseDown();
-        UpdateMouseHold();
+        UpdateUpwards();
         UpdateLeftRight();
+        UpdateDownwards();
     }
 
-    protected virtual void UpdateMouseHold()
+    protected virtual void UpdateUpwards()
     {
 #if UNITY_EDITOR
         if (Input.GetKey(KeyCode.Space))
         {
-            mouseHold = true;
+            upwards = 1;
         }
         else
         {
-            mouseHold = false;
+            upwards = 0;
         }
 #else
         if (Input.GetMouseButton(0))
@@ -73,5 +81,17 @@ public class InputHandler : Singleton<InputHandler>
         float accelerationX = Input.acceleration.x;
         leftRight = Mathf.Clamp( accelerationX * 2, -1, 1);
 #endif 
+    }
+    protected virtual void UpdateDownwards()
+    {
+        float verticalAxis = Input.GetAxis("Vertical");
+        if ( verticalAxis < 0)
+        {
+            downwards = Mathf.Abs(verticalAxis);
+        }
+        else
+        {
+            downwards = 0;
+        }
     }
 }

@@ -27,7 +27,7 @@ public class LeftRightEngineController : MonoBehaviour
             rightEngine.Push = false;
         }
 
-        if(InputHandler.Instance.MouseHold)
+        if(InputHandler.Instance.Upwards > 0)
         {
             leftEngine.Push = true;
             rightEngine.Push = true;

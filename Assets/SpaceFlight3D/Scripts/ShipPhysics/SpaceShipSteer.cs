@@ -7,10 +7,6 @@ public class SpaceShipSteer : MonoBehaviour
     public float rotateSpeed = 1;
     public bool flipLeftRight = true;
 
-    private void Start()
-    {
-        Input.gyro.enabled = true;
-    }
 
     private void Update()
     {
@@ -48,10 +44,4 @@ Quaternion.Euler(transform.rotation.eulerAngles.x,
                                                 transform.rotation.eulerAngles.y,
                                                 0);
     }
-
-    //private void OnGUI()
-    //{
-    //    GUI.Box(new Rect(10, 10, 250, 120), "Ship Steer");
-    //    GUI.Label(new Rect(15, 30, 245, 60), "Accelerometer: " + InputHandler.Instance.LeftRight);
-    //}
 }

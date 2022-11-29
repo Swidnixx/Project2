@@ -30,9 +30,9 @@ public class SpaceShipStabilizer : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawRay(transform.position, transform.up);
-        Debug.DrawRay(transform.position, force / Mass, Color.cyan);
-        Debug.Log(Mass);
+        //Debug.DrawRay(transform.position, transform.up);
+        Debug.DrawRay(transform.position, force / Mass / -Physics.gravity.y, Color.cyan);
+        //Debug.Log(Mass);
     }
 
     private void FixedUpdate()

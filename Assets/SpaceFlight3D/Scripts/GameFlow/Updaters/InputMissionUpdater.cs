@@ -26,7 +26,7 @@ public class InputMissionUpdater : MissionUpdater
                 break;
 
             case InputType.Thrust:
-                if (InputHandler.Instance.MouseHold)
+                if (InputHandler.Instance.Upwards == 1)
                 {
                     UpdateMission();
                 }
