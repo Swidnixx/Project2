@@ -16,19 +16,33 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     // Internally we work with this field only
     private static T _instance;
 
-    private void Awake()
+    public void Awake()
     {
-        if (_instance == null || _instance == this)
+        if (_instance == null )// || _instance == this)
         {
-            Debug.Log("InputHandler: " + this.name + " (" + this.GetType() + ")");
-            _instance = this.GetComponent<T>();
+            //Debug.Log("Singleton: " + this.name + " (" + this.GetType() + ")");
+            _instance = GetComponent<T>();
+           // Debug.Log("Awake Instance:" + _instance.gameObject.name + ", " + _instance.GetType());
         }
         else
         {
 #if UNITY_EDITOR
-            Debug.LogError("Multiple instances of Singleton: " + this.GetType());
+            Debug.LogError("Multiple instances of Singleton: " + Instance.GetType() + "; " + this.GetType());
 #endif
         }
-
     }
+
+    //private void OnDestroy()
+    //{
+    //    Debug.Log("Singleton: " + this.name + " destroyed");
+    //    Reset();
+    //}
+
+    public void Reset()
+    {
+        Debug.Log("Singleton: " + _instance.name + " destroyed" + " (" + _instance.GetType() + ")");
+        _instance = null;
+    }
+
+
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputHandler : Singleton<InputHandler>
+public class InputHandler : SingletonSwitchable<InputHandler>
 {
     public bool MouseDown { get { return mouseDown; } }
     public float Upwards { get { return upwards; } }
@@ -22,7 +22,15 @@ public class InputHandler : Singleton<InputHandler>
 
     protected virtual void Update()
     {
+        if (Instance == null)
+        {
+            Debug.Log("Input handler null");
+            return;
+        }
+
+
         //Debug.Log("Input Handler instance: " + Instance);
+       // Debug.Log("InputHandler:" + Instance.gameObject.name + ", " + Instance.GetType());
         UpdateMouseDown();
         UpdateUpwards();
         UpdateLeftRight();
@@ -43,13 +51,14 @@ public class InputHandler : Singleton<InputHandler>
 #else
         if (Input.GetMouseButton(0))
         {
-            mouseHold = true;
+            upwards = 1;
         }
         else
         {
-            mouseHold = false;
+            upwards = 0;
         }
 #endif
+
     }
     protected virtual void UpdateMouseDown()
     {

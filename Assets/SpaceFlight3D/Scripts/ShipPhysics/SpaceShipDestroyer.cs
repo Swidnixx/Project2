@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class SpaceShipDestroyer : MonoBehaviour
 {
+    public string[] immiediateDestroyTags;
     [Tooltip("Velocity in m/s")]
     public float destroySpeed = 10;
 
@@ -24,8 +25,9 @@ public class SpaceShipDestroyer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        bool deadlyTag = Array.IndexOf(immiediateDestroyTags, collision.transform.tag) != -1;
         //Debug.Log("Relative velocity: " + collision.relativeVelocity.magnitude);
-        if(collision.relativeVelocity.magnitude > destroySpeed || collision.transform.CompareTag("Terrain"))
+        if(collision.relativeVelocity.magnitude > destroySpeed || deadlyTag)
         {
             Crash();
         }

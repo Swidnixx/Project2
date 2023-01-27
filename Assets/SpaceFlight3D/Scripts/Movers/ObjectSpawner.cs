@@ -4,9 +4,9 @@ using UnityEngine;
 using System;
 using System.Linq;
 
-public class ObjectSpawner : MonoBehaviour
+public class ObjectSpawner : MonoBehaviour 
 {
-    public Transform[] toSpawn;
+    public GameObject[] toSpawn;
     public bool spawnRepeating;
     public float startTime = 0;
     public float spawnTime = 1;
@@ -19,9 +19,9 @@ public class ObjectSpawner : MonoBehaviour
         }
     }
 
-    public void Spawn()
+    public virtual void Spawn()
     {
-        toSpawn.ToList().ForEach(prefab => Instantiate(prefab, transform.position, Quaternion.identity));
+        Array.ForEach(toSpawn, prefab => Instantiate(prefab, transform.position, Quaternion.identity));
     }
 
     public void SpawnRepeatingly(float waitTime, float time)

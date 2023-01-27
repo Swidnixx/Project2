@@ -18,7 +18,7 @@ public class MenuWindow : MonoBehaviour
         Selectable selected = GetComponentInChildren<Selectable>(false);
         if (selected == null) return;
         selected.Select();
-        Debug.Log(selected + " selected from " + gameObject);
+       // Debug.Log(selected + " selected from " + gameObject);
     }
 
     

@@ -23,18 +23,19 @@ public class SteeringRefactored : MonoBehaviour
     private void Update()
     {
         if (InputHandler.Instance == null) return;
+        //Debug.Log(InputHandler.Instance);
         float leftRight = InputHandler.Instance.LeftRight;
 
         float angleRotation = maxAngle * leftRight * (flipLeftRight ? -1 : 1);
-        Vector3 shipStaticRot = Vector3.Scale(transform.rotation.eulerAngles, (Vector3.one - axis));
+        Vector3 shipStaticRot = Vector3.Scale(transform.rotation.eulerAngles, (Vector3.one - axis)); //preserve rotation on other axles
         Vector3 shipDynamicRot = angleRotation * axis;
         Quaternion targetRotation = Quaternion.Euler( shipStaticRot + shipDynamicRot );
 
-        //transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
         if (Time.deltaTime * rotateSpeed > 1)
         {
-            Debug.LogWarning("Lerp step is greater than 1"); 
+            Debug.LogWarning(gameObject + ": Lerp step is greater than 1"); // As we're lerping, step must be within 0-1 range
         }
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
         //Debug.Log("Cur rot: " + transform.rotation.eulerAngles + " Target rot: " + targetRotation.eulerAngles + " step: " + Time.deltaTime * rotateSpeed);
     }

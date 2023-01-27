@@ -8,6 +8,12 @@ public class JoystickInputHandler : InputHandler
 
     bool push;
 
+    //protected override void Update()
+    //{
+    //    base.Update();
+    //    Debug.Log("JoystickInputHandler: " + gameObject.name + ", " + this.GetType());
+    //}
+
     protected override void UpdateLeftRight()
     {
         leftRight = joystick.Horizontal;
