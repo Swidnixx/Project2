@@ -29,6 +29,7 @@ public class SpaceShipFracturer : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Respawn");
 
         fullModel.SetActive(false);
+        fracturedModel.transform.parent = null;
         fracturedModel.SetActive(true);
         StartCoroutine(RevivePlayer());
 
@@ -48,6 +49,7 @@ public class SpaceShipFracturer : MonoBehaviour
         }
 
         Array.ForEach(renderers, r => r.transform.localPosition = Vector3.zero);
+        fracturedModel.transform.parent = transform;
         fracturedModel.SetActive(false);
 
         Revive();

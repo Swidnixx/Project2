@@ -22,7 +22,7 @@ public class SpaceShipEngine : MonoBehaviour
     #region Unity Callbacks
     protected virtual void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponentInParent<Rigidbody>();
         particleController = GetComponentInChildren<EngineParticleController>();
     }
 

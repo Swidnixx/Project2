@@ -1878,6 +1878,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e2a9311e75391428a9b4be4f7105e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1022812842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2800190781739000796, guid: 75dc266c8fac2b0499bd32bf787b5248,
+    type: 3}
+  m_PrefabInstance: {fileID: 2054431006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1022812844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022812842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e650a71d7b0697c47b553af12e54fc24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capacity: 100
+--- !u!114 &1022812845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022812842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e8c02764bb9f446a4065e2734f1101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPower: 7
+  topBorder: 10
+  fuelUsagePerSecond: 10
+  tank: {fileID: 1022812844}
+  number: 2
+--- !u!114 &1022812846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022812842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e8c02764bb9f446a4065e2734f1101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPower: 7
+  topBorder: 10
+  fuelUsagePerSecond: 10
+  tank: {fileID: 1022812844}
+  number: 1
+--- !u!114 &1022812847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022812842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb89d4ba55410d4f80ceda07e8f4830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1064998524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,7 +2590,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1449289096}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: SpaceShipThruster, Assembly-CSharp
           m_MethodName: set_FuelUsage
           m_Mode: 4
@@ -2753,18 +2818,6 @@ MonoBehaviour:
     AfterCooldown:
       m_PersistentCalls:
         m_Calls: []
---- !u!114 &1449289096 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3117229314601906543, guid: 75dc266c8fac2b0499bd32bf787b5248,
-    type: 3}
-  m_PrefabInstance: {fileID: 2054431006}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11e8c02764bb9f446a4065e2734f1101, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!198 &1470079749 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 132660160991246498, guid: c8fc666337c8509488d08ec5089f98ab,
@@ -3600,6 +3653,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2800190782907490001, guid: 75dc266c8fac2b0499bd32bf787b5248, type: 3}
     - {fileID: 2800190782907490014, guid: 75dc266c8fac2b0499bd32bf787b5248, type: 3}
+    - {fileID: 3117229314601906543, guid: 75dc266c8fac2b0499bd32bf787b5248, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 75dc266c8fac2b0499bd32bf787b5248, type: 3}
 --- !u!114 &2054431007 stripped
 MonoBehaviour:
