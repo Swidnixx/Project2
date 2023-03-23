@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour
 
     public void NextScene(string name)
     {
-        SceneManager.LoadSceneAsync(name);
+        //SceneManager.LoadSceneAsync(name);
+        SceneManager.LoadScene(name);
     }
 
     public void QuitGame()

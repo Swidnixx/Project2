@@ -29,7 +29,7 @@ TagManager:
   - Buttons
   - Foreground
   - Respawn
-  - 
+  - 2dBackground
   - 
   - 
   - 
@@ -47,4 +47,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1211342577
+    locked: 0
+  - name: UI
+    uniqueID: 693565241
     locked: 0

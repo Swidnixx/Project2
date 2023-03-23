@@ -1244,8 +1244,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPower: 100
   topBorder: 100
-  FuelUsagePerSecond: 1
+  fuelUsagePerSecond: 10
   tank: {fileID: 3117229314768359550}
+  number: 
 --- !u!114 &207643180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,8 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8d7a292c1ccf5439b7a4bb5f60dffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftEngine: {fileID: 2119400113}
-  rightEngine: {fileID: 1845577400}
+  engines: []
 --- !u!138 &207643181
 FixedJoint:
   m_ObjectHideFlags: 0
@@ -18405,8 +18405,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPower: 100
   topBorder: 100
-  FuelUsagePerSecond: 1
+  fuelUsagePerSecond: 10
   tank: {fileID: 318940217}
+  number: 
 --- !u!114 &939434783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18419,8 +18420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8d7a292c1ccf5439b7a4bb5f60dffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftEngine: {fileID: 1106710332}
-  rightEngine: {fileID: 1691940293}
+  engines: []
 --- !u!1 &972265286
 GameObject:
   m_ObjectHideFlags: 0
@@ -29776,8 +29776,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPower: 10
   topBorder: 100
-  FuelUsagePerSecond: 1
+  fuelUsagePerSecond: 10
   tank: {fileID: 1350406099}
+  number: 
 --- !u!114 &1350406096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29944,8 +29945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8d7a292c1ccf5439b7a4bb5f60dffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftEngine: {fileID: 586100236}
-  rightEngine: {fileID: 838557956}
+  engines: []
 --- !u!1 &1359735476
 GameObject:
   m_ObjectHideFlags: 0
@@ -41470,8 +41470,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPower: 100
   topBorder: 100
-  FuelUsagePerSecond: 1
+  fuelUsagePerSecond: 10
   tank: {fileID: 318940217}
+  number: 
 --- !u!114 &1973355091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41484,8 +41485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8d7a292c1ccf5439b7a4bb5f60dffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftEngine: {fileID: 908379982}
-  rightEngine: {fileID: 972265289}
+  engines: []
 --- !u!1 &1985571687
 GameObject:
   m_ObjectHideFlags: 0
@@ -54114,8 +54114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPower: 100
   topBorder: 100
-  FuelUsagePerSecond: 1
+  fuelUsagePerSecond: 10
   tank: {fileID: 3117229314768359550}
+  number: 
 --- !u!114 &2800190783243961029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54128,8 +54129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8d7a292c1ccf5439b7a4bb5f60dffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftEngine: {fileID: 6691137407102699697}
-  rightEngine: {fileID: 6691137407802720760}
+  engines: []
 --- !u!138 &2800190783243961030
 FixedJoint:
   m_ObjectHideFlags: 0

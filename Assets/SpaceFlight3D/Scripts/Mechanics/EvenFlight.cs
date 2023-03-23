@@ -36,7 +36,16 @@ public class EvenFlight : MonoBehaviour
 
     private void Update()
     {
+        if (player == null) return;
         
+        if( Vector3.Distance(player.position, exit.position) < 2)
+        {
+            FinishMechanic();
+        }
     }
 
+    void FinishMechanic()
+    {
+        player.constraints = RigidbodyConstraints.None;
+    }
 }
