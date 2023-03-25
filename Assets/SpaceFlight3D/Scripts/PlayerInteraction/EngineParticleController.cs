@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class EngineParticleController : MonoBehaviour
 {
-    bool thrusting;
-
     public ParticleSystem[] engines;
-
+    
+    bool thrusting;
     ParticleSystem.VelocityOverLifetimeModule[] velocityModules;
     ParticleSystem.EmissionModule[] emissionModules;
 
