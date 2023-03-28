@@ -45,7 +45,7 @@ public class SpaceShipEngine : MonoBehaviour
     {
         if(Push && transform.position.y < topBorder)
         {
-            power = maxPower;
+            power = maxPower * InputHandler.Instance.Upwards;
         }
         else
         {
