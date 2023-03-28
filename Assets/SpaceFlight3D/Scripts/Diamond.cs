@@ -22,18 +22,18 @@ public class Diamond : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.collider.CompareTag("Player"))
-        {
-            destroyEffect.transform.position = transform.position;
-            destroyEffect.Play();
-            destroyEffect.transform.parent = null;
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if(collision.collider.CompareTag("Player"))
+    //    {
+    //        destroyEffect.transform.position = transform.position;
+    //        destroyEffect.Play();
+    //        destroyEffect.transform.parent = null;
 
-            onDestroy?.Invoke();
+    //        onDestroy?.Invoke();
 
-            Destroy(gameObject);
-        }
-    }
+    //        Destroy(gameObject);
+    //    }
+    //}
 
 }

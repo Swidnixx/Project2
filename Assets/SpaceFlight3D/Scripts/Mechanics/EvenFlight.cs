@@ -9,6 +9,8 @@ public class EvenFlight : MonoBehaviour
     public Transform enter;
     public Transform exit;
 
+    public float moveToSpeed = 5;
+
     Rigidbody player;
 
     public UnityEvent OnEnter;
@@ -31,7 +33,7 @@ public class EvenFlight : MonoBehaviour
 
         player.constraints = RigidbodyConstraints.FreezePositionY;
         //player.isKinematic = true;
-        StartCoroutine(Utils.KinematicMovement.MoveToLineary(player, enter.position, 2));
+        StartCoroutine(Utils.KinematicMovement.MoveToLineary(player, enter.position, moveToSpeed));
     }
 
     private void Update()

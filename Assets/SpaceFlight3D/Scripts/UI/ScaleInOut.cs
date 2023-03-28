@@ -47,7 +47,7 @@ public class ScaleInOut : MonoBehaviour
             Vector2 lerp = Vector2.Lerp(Vector3.zero, Vector3.one, t);
             transform.localScale = lerp;
 
-            t += Time.deltaTime * speed;
+            t += Time.unscaledDeltaTime * speed;
 
             yield return null;
         }
@@ -63,7 +63,7 @@ public class ScaleInOut : MonoBehaviour
             Vector2 lerp = Vector2.Lerp(Vector3.one, Vector3.zero, t);
             transform.localScale = lerp;
 
-            t += Time.deltaTime * speed;
+            t += Time.unscaledDeltaTime * speed;
 
             yield return null;
         }

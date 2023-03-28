@@ -14,6 +14,7 @@ public class ShipSetup : MonoBehaviour
     public ButtonHoldable buttonRight;
     public Slider handle;
 
+    public Dropdown selectionDropdown;
     public Modes initialMode;
 
     // List of components that are unique for current setup
@@ -33,6 +34,7 @@ public class ShipSetup : MonoBehaviour
     public void Setup(int mode)
     {
         DestroyPreviousSetup();
+        selectionDropdown.value = mode;
 
         switch ((Modes)mode)
         {

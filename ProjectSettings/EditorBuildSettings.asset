@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SpaceFlight3D/Scenes/NextLevels/SunTempleAssets.unity
     guid: 7dc63318ffee333428818cfc03c96b95
+  - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/SampleSceneWith2dBackground.unity
+    guid: 3abe3bf106d4ebf47a4b874b133f12d1
   m_configObjects: {}
