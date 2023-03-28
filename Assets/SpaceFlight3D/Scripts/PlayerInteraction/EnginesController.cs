@@ -10,7 +10,6 @@ public class EnginesController : MonoBehaviour
     protected virtual void Start()
     {
         engines = GetComponentsInChildren<SpaceShipEngine>();
-        maxPower = engines[0].MaxPower;
     }
 
     protected virtual void Update()
@@ -23,7 +22,6 @@ public class EnginesController : MonoBehaviour
             foreach(var engine in engines)
             {
                 //Debug.Log("Upwards: " + InputHandler.Instance.Upwards);
-                engine.MaxPower = InputHandler.Instance.Upwards * maxPower;
                 engine.Push = true;
             }
         }

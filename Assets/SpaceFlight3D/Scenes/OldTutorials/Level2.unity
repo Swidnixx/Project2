@@ -290,6 +290,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 19746657962851841, guid: e917ffbb9a9bb8c478b941a40a479678,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1760568452}
     - target: {fileID: 19746657962851846, guid: e917ffbb9a9bb8c478b941a40a479678,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -305,6 +310,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -14.207529
       objectReference: {fileID: 0}
+    - target: {fileID: 19746658177591656, guid: e917ffbb9a9bb8c478b941a40a479678,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1760568452}
     - target: {fileID: 19746658177591657, guid: e917ffbb9a9bb8c478b941a40a479678,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -560,6 +570,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2054431006}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &350346834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350346831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb89d4ba55410d4f80ceda07e8f4830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &401391173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,6 +2183,34 @@ MonoBehaviour:
   blurAndFlaresShader: {fileID: 4800000, guid: be6e39cf196f146d5be72fbefb18ed75, type: 3}
   brightPassFilterShader: {fileID: 4800000, guid: 0aeaa4cb29f5d4e9c8455f04c8575c8c,
     type: 3}
+--- !u!1 &1085102098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 456756990725489400, guid: e917ffbb9a9bb8c478b941a40a479678,
+    type: 3}
+  m_PrefabInstance: {fileID: 39184047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1085102101
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085102098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BindingMode: 1
+  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_XDamping: 1
+  m_YDamping: 1
+  m_ZDamping: 1
+  m_AngularDampingMode: 0
+  m_PitchDamping: 0
+  m_YawDamping: 0
+  m_RollDamping: 0
+  m_AngularDamping: 0
 --- !u!1 &1087921540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1334828460301031796, guid: 970d3d1cbff977845be1306efa15559a,
@@ -8582,6 +8632,11 @@ PrefabInstance:
         type: 3}
       propertyPath: onCrash.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3117229314601906543, guid: 75dc266c8fac2b0499bd32bf787b5248,
+        type: 3}
+      propertyPath: maxPower
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3117229314601906543, guid: 75dc266c8fac2b0499bd32bf787b5248,
         type: 3}

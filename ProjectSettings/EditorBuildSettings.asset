@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SpaceFlight3D/Scenes/Prototypes/SteeringTowerScene.unity
     guid: 358284cf8c20d6047afce1c34f00548f
+  - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/NextLevels/SunTempleAssets.unity
+    guid: 7dc63318ffee333428818cfc03c96b95
   m_configObjects: {}
