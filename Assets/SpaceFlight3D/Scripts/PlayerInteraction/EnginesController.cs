@@ -33,4 +33,12 @@ public class EnginesController : MonoBehaviour
             }
         }
     }
+
+    public void OnDisable()
+    {
+        foreach (var engine in engines)
+        {
+            engine.Push = false;
+        }
+    }
 }

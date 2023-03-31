@@ -46,7 +46,8 @@ public class EngineParticleController : MonoBehaviour
 
             for(int i=0; i<engines.Length; i++)
             {
-                velocityModules[i].z = new ParticleSystem.MinMaxCurve(thrustSpeedZ);
+                //velocityModules[i].z = new ParticleSystem.MinMaxCurve(thrustSpeedZ);
+                velocityModules[i].speedModifier = thrustSpeedZ;
                 emissionModules[i].rateOverTime = new ParticleSystem.MinMaxCurve(thrustRate);
                 StartCoroutine(IncreaseParticleLength());
                // rendererModules[i].lengthScale -= 0.1f;
@@ -77,7 +78,8 @@ public class EngineParticleController : MonoBehaviour
 
             for(int i=0; i<engines.Length; i++)
             {
-                velocityModules[i].z = new ParticleSystem.MinMaxCurve(steadySpeedZ);
+                //velocityModules[i].z = new ParticleSystem.MinMaxCurve(steadySpeedZ);
+                velocityModules[i].speedModifier = steadySpeedZ;
                 emissionModules[i].rateOverTime = new ParticleSystem.MinMaxCurve(steadyRate);
                 rendererModules[i].lengthScale = -1;
             }

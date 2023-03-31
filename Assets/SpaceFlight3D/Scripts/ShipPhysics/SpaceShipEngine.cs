@@ -28,7 +28,8 @@ public class SpaceShipEngine : MonoBehaviour
 
     protected virtual void Update()
     {
-        Debug.DrawRay(transform.position, transform.up * power , Color.green);
+        //if((Camera.current.cullingMask(1 << gameObject.layer)) > 0)
+            Debug.DrawRay(transform.position, transform.up * power , Color.green);
 
         AccumulateForce();
     }
@@ -70,7 +71,7 @@ public class SpaceShipEngine : MonoBehaviour
 
     private void HandleParticle()
     {
-        if (!particleController) return;
+        if (!particleController || !particleController.isActiveAndEnabled) return;
 
             if (power > 1)
             {

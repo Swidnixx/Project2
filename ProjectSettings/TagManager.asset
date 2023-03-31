@@ -30,7 +30,7 @@ TagManager:
   - Foreground
   - Respawn
   - 2dBackground
-  - 
+  - 2dForeground
   - 
   - 
   - 
@@ -42,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2992817213
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

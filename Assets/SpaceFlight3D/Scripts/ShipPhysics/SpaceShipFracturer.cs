@@ -48,8 +48,9 @@ public class SpaceShipFracturer : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenBlinks);
         }
 
-        Array.ForEach(renderers, r => r.transform.localPosition = Vector3.zero);
         fracturedModel.transform.parent = transform;
+        fracturedModel.transform.localPosition = Vector3.zero;
+        Array.ForEach(renderers, r => r.transform.localPosition = Vector3.zero);
         fracturedModel.SetActive(false);
 
         Revive();

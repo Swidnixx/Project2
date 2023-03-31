@@ -29,7 +29,8 @@ namespace SpaceFlight3D.UI
             if (mainMenuActiveOnStart)
             {
                 // turn on main window
-                SwitchCurrentWindow(MainMenuWindow);
+                //SwitchCurrentWindow(MainMenuWindow);
+                OpenMenu();
             }
         }
 

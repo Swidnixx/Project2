@@ -10,8 +10,12 @@ public class Respawner : MonoBehaviour
     public Transform startPos;
     Vector3 spawnPoint;
 
+    RigidbodyConstraints rbConstraints;
+
     private void Start()
     {
+        rbConstraints = player.constraints;
+
         if(setOnStart)
         {
             SetSpawn(startPos);
@@ -26,11 +30,15 @@ public class Respawner : MonoBehaviour
 
     public void Respawn()
     {
+
+        player.transform.rotation = Quaternion.Euler(rotation);
+        player.transform.position = spawnPoint;
+
         // reset velocities and systems of player
         player.velocity = Vector3.zero;
         player.angularVelocity = Vector3.zero;
 
-        player.rotation = Quaternion.Euler(rotation);
-        player.position = spawnPoint;
+
+        player.constraints = rbConstraints;
     }
 }
