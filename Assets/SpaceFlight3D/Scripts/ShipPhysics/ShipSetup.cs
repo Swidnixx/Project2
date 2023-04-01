@@ -13,6 +13,7 @@ public class ShipSetup : MonoBehaviour
     public ButtonHoldable buttonLeft;
     public ButtonHoldable buttonRight;
     public Slider handle;
+    public ButtonHoldable thrustButton;
 
     public Dropdown selectionDropdown;
     public Modes initialMode;
@@ -22,7 +23,7 @@ public class ShipSetup : MonoBehaviour
 
     public enum Modes
     {
-        GyroMode, JoystickMode, SplitScreenMode, HandleMode
+        GyroMode, JoystickMode, SplitScreenMode, HandleMode, ButtonsMode
     }
 
     private void Start()
@@ -53,6 +54,10 @@ public class ShipSetup : MonoBehaviour
             case Modes.HandleMode:
                 SetupButtonsAndHandle();
                 break;
+
+            case Modes.ButtonsMode:
+                SetupButtons();
+                break;
         }
     }
 
@@ -72,6 +77,8 @@ public class ShipSetup : MonoBehaviour
         buttonLeft.gameObject.SetActive(false);
         buttonRight.gameObject.SetActive(false);
         handle.gameObject.SetActive(false);
+        thrustButton.gameObject.SetActive(false);
+
     }
 
     private void SetupGyro()
@@ -106,6 +113,19 @@ public class ShipSetup : MonoBehaviour
 
         ButtonsInputHandler ih = player.AddComponent<ButtonsInputHandler>();
         ih.Setup(buttonLeft, buttonRight, handle);
+
+        ih.Switch(ih);
+        currentSetUp.Add(ih);
+    }
+
+    private void SetupButtons()
+    {
+        buttonLeft.gameObject.SetActive(true);
+        buttonRight.gameObject.SetActive(true);
+        thrustButton.gameObject.SetActive(true);
+
+        ButtonsInputHandler ih = player.AddComponent<ButtonsInputHandler>();
+        ih.Setup(buttonLeft, buttonRight, thrustButton);
 
         ih.Switch(ih);
         currentSetUp.Add(ih);

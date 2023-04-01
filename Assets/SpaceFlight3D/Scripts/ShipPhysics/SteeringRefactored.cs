@@ -7,11 +7,14 @@ public class SteeringRefactored : MonoBehaviour
     // Kinematic Ship rotation
     public float maxAngle = 45;
     public float rotateSpeed = 1;
-    public bool flipLeftRight = true;
-    public Vector3 axis = Vector3.forward;
-
     // Dynamic sideways forces
     public float force = 2;
+    public bool applyForceLocally;
+
+    // Rotation Axis settings
+    public Vector3 axis = Vector3.forward;
+    public bool flipLeftRight;
+
     Rigidbody rb;
 
     private void Start()
@@ -26,10 +29,11 @@ public class SteeringRefactored : MonoBehaviour
         //Debug.Log(InputHandler.Instance);
         float leftRight = InputHandler.Instance.LeftRight;
 
-        float angleRotation = maxAngle * leftRight * (flipLeftRight ? -1 : 1);
-        Vector3 shipStaticRot = Vector3.Scale(transform.rotation.eulerAngles, (Vector3.one - axis)); //preserve rotation on other axles
-        Vector3 shipDynamicRot = angleRotation * axis;
-        Quaternion targetRotation = Quaternion.Euler( shipStaticRot + shipDynamicRot );
+        Quaternion targetRotation = SetTargetRotation(leftRight);
+        //float angleRotation = maxAngle * leftRight * (flipLeftRight ? -1 : 1);
+        //Vector3 shipStaticRot = Vector3.Scale(transform.rotation.eulerAngles, (Vector3.one - axis)); //preserve rotation on other axles
+        //Vector3 shipDynamicRot = angleRotation * axis;
+        //Quaternion targetRotation = Quaternion.Euler( shipStaticRot + shipDynamicRot );
 
         if (Time.deltaTime * rotateSpeed > 1)
         {
@@ -40,6 +44,15 @@ public class SteeringRefactored : MonoBehaviour
         //Debug.Log("Cur rot: " + transform.rotation.eulerAngles + " Target rot: " + targetRotation.eulerAngles + " step: " + Time.deltaTime * rotateSpeed);
     }
 
+    protected virtual Quaternion SetTargetRotation(float leftRight)
+    {
+        float angleRotation = maxAngle * leftRight * (flipLeftRight ? -1 : 1);
+        Vector3 shipStaticRot = Vector3.Scale(transform.rotation.eulerAngles, (Vector3.one - axis)); //preserve rotation on other axles
+        Vector3 shipDynamicRot = angleRotation * axis;
+        Quaternion targetRotation = Quaternion.Euler(shipStaticRot + shipDynamicRot);
+        return targetRotation;
+    }
+
     // Dynamic Lateral Forces Moving Ship Sideways
     private void FixedUpdate()
     {
@@ -47,6 +60,10 @@ public class SteeringRefactored : MonoBehaviour
         Vector3 forceDir = new Vector3(1, 0, 1) - axis;
 
         Vector3 force = forceDir * rot / maxAngle * this.force * rb.mass;
+        if (applyForceLocally)
+        {
+            force = -transform.TransformDirection(force);
+        }
         Debug.DrawRay(transform.position, force / rb.mass / this.force, Color.red);
         rb.AddForce(force);
     }
