@@ -149,7 +149,7 @@ PlayableDirector:
   m_GameObject: {fileID: 415788625}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 3ff1920e009c30145927ee33b5180810, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 5b6ea12b0d1a2af478fca2621a3e6b94, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -171,6 +171,22 @@ PlayableDirector:
     value: {fileID: 1635643077}
   - key: {fileID: 2439078264685570850, guid: 3ff1920e009c30145927ee33b5180810, type: 2}
     value: {fileID: 1923495597}
+  - key: {fileID: -5604466160186344781, guid: 5b6ea12b0d1a2af478fca2621a3e6b94, type: 2}
+    value: {fileID: 932468414}
+  - key: {fileID: 1383197500054321105, guid: 5b6ea12b0d1a2af478fca2621a3e6b94, type: 2}
+    value: {fileID: 1684943849}
+  - key: {fileID: -5026324382012834623, guid: 5b6ea12b0d1a2af478fca2621a3e6b94, type: 2}
+    value: {fileID: 1635643077}
+  - key: {fileID: 2439078264685570850, guid: 5b6ea12b0d1a2af478fca2621a3e6b94, type: 2}
+    value: {fileID: 1923495597}
+  - key: {fileID: -2575349443942360059, guid: 5b6ea12b0d1a2af478fca2621a3e6b94, type: 2}
+    value: {fileID: 932468409}
+  - key: {fileID: 8084120184246237143, guid: 5b6ea12b0d1a2af478fca2621a3e6b94, type: 2}
+    value: {fileID: 1684943844}
+  - key: {fileID: -7272713960575848644, guid: 5b6ea12b0d1a2af478fca2621a3e6b94, type: 2}
+    value: {fileID: 1635643072}
+  - key: {fileID: -7541278008198929270, guid: 5b6ea12b0d1a2af478fca2621a3e6b94, type: 2}
+    value: {fileID: 1923495592}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &415788627
@@ -206,7 +222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &932468410
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -240,7 +256,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0fc2acf40bfca2a4986ef852a96e154b, type: 2}
+  - {fileID: 2100000, guid: 336564c9c9f788d409636bb7c645a0ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -339,7 +355,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.009344962, g: 0.13207549, b: 0.06468616, a: 0}
+  m_BackGroundColor: {r: 0.12628233, g: 0.019624421, b: 0.1981132, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -405,7 +421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1635643073
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -439,7 +455,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 85f4a7f4f5406c94381e3a8fb9642f40, type: 2}
+  - {fileID: 2100000, guid: 772a61c937538ac42b27a93bfd3c421e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -521,7 +537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1684943845
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -555,7 +571,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 22c2a09644a95224f8e4fc5e0387c23d, type: 2}
+  - {fileID: 2100000, guid: 7718ff3872d28474d89fe17a2af9c6d0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -764,7 +780,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0ec78eef836c28b4baea624795754b35, type: 2}
+  - {fileID: 2100000, guid: 47da0f5c94720024886f1866da6e9bc6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
