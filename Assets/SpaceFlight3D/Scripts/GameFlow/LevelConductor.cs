@@ -6,34 +6,59 @@ using UnityEngine.UI;
 
 public class LevelConductor : MonoBehaviour
 {
-    // These are quoted on each stage of a level
-    public string[] quotes;
-
-    // This will probably be refactored
-    public Text displayText;
-
-    int current = 0;
+    public GameObject statisticsPanel;
+    public GameObject endStatistics;
+    public EasyFlyStart flyStarter;
+    public ScreenFader screenFader;
 
     private void Start()
     {
-        
+        // Show Level Statistics and Block GamePlay
+        statisticsPanel.SetActive(true);
+        endStatistics.SetActive(false);
+        flyStarter.Block();
+
+        // Reveal Statistics Panel on Start
+        if(screenFader)
+        {
+            screenFader.gameObject.SetActive(true);
+            screenFader.FadeImmediately();
+            screenFader.Reveal();
+        }
+
+        // Wait for player to click play...
     }
 
-    public void TriggerNext()
-    {
-        current++;
-        if (current < quotes.Length)
-        {
-            displayText.text = quotes[current]; 
-        }
-        else
-        {
-            Finish();
-        }
+    public void CloseStatisticsView()
+     {
+        statisticsPanel.SetActive(false);
+
+        GameObject startInvoker = new GameObject("StartInvoker");
+        startInvoker.transform.parent = transform;
+
+        InputInvoker inputInvoker = startInvoker.AddComponent<InputInvoker>();
+
+        inputInvoker.inputType = InputInvoker.InputType.Tap;
+        inputInvoker.OnInput = new UnityEngine.Events.UnityEvent();
+        inputInvoker.OnInput.AddListener( StartPlaying );
+
+        inputInvoker.singleUsage = true;
+
     }
 
-    private void Finish()
+    public void StartPlaying()
     {
-       // Destroy(gameObject);
+        flyStarter.StartFlight();
+    }
+
+    public void FinishAndShowStatistics()
+    {
+        endStatistics.SetActive(true);
+    }
+
+    public void EndLevel()
+    {
+        screenFader.RevealImmediately();
+        screenFader.Fade();
     }
 }

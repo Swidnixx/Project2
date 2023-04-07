@@ -10,7 +10,7 @@ public class Lava : MonoBehaviour
         if(collision.collider.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up* 10000);
-            collision.gameObject.GetComponent<SpaceShipDestroyer>().Crash();
+            collision.gameObject.GetComponent<SpaceShipDestroyer>().Crash(collision.contacts[0].point, collision.contacts[0].normal);
         }
     }
 }

@@ -87,5 +87,41 @@ namespace SpaceFlight3D.UI
             // When transition is done, select first active selectable item
             MenuUI.Instance.RefreshSelectables();
         }
+
+        public void GoUp()
+        {
+            if (transitionPending) return;
+            transitionPending = true;
+
+            allItems[current].GoDown();
+            if (allItems.Length > current + 1)
+            {
+                current++;
+            }
+            else
+            {
+                current = 0;
+            }
+            allItems[current].TurnGameObjectOn();
+            allItems[current].FromUp(Reset);
+        }
+
+        public void GoDown()
+        {
+            if (transitionPending) return;
+            transitionPending = true;
+
+            allItems[current].GoUp();
+            if (current > 0)
+            {
+                current--;
+            }
+            else
+            {
+                current = allItems.Length - 1;
+            }
+            allItems[current].gameObject.SetActive(true);
+            allItems[current].FromUp(Reset);
+        }
     } 
 }

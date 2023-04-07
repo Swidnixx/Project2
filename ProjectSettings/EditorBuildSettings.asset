@@ -33,12 +33,27 @@ EditorBuildSettings:
     path: Assets/SpaceFlight3D/Scenes/Prototypes/SteeringTowerScene.unity
     guid: 358284cf8c20d6047afce1c34f00548f
   - enabled: 1
-    path: Assets/SpaceFlight3D/Scenes/NextLevels/SunTempleAssets.unity
-    guid: 7dc63318ffee333428818cfc03c96b95
-  - enabled: 1
     path: Assets/SpaceFlight3D/Scenes/SampleSceneWith2dBackground.unity
     guid: 3abe3bf106d4ebf47a4b874b133f12d1
   - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/FunTests/Fun1.unity
+    guid: 79626ef863097654486b08a798700522
+  - enabled: 1
     path: Assets/SpaceFlight3D/Scenes/FunTests/OtherSide.unity
     guid: 83360bf84e996234798dd600439daa50
+  - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/FunTests/OtherSide2.unity
+    guid: 4359021c4c1e53c43a2151f648b0854d
+  - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/FunTests/FunSemiWideTrack.unity
+    guid: 50a4d5973ba724943b13b67f9ae9218e
+  - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/FunTests/FunNarrowTrack.unity
+    guid: 8faa6222da0110f49931e920d0f90cd3
+  - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/FunTests/FunDeepTrack.unity
+    guid: e48babf7a3747f443858d570b22de12a
+  - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/FunTests/FunIntoDepths.unity
+    guid: 8b988e80c15255047a69cfdcef2d496d
   m_configObjects: {}

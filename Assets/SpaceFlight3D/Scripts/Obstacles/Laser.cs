@@ -39,7 +39,7 @@ public class Laser : MonoBehaviour
         {
             if(hit.collider.CompareTag("Player"))
             {
-                hit.collider.transform.GetComponent<SpaceShipDestroyer>().Crash();
+                hit.collider.transform.GetComponent<SpaceShipDestroyer>().Crash(hit.point, hit.normal);
             }
         }
     }
