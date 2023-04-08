@@ -11,7 +11,7 @@ public class MaterialScroller : MonoBehaviour
     Vector2 offset;
     private void Update()
     {
-        offset += speed * Time.deltaTime;
+        offset += speed * Time.unscaledDeltaTime;
         material.SetTextureOffset(textureName, offset);
     }
 }

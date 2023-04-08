@@ -16,7 +16,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     // Internally we work with this field only
     private static T _instance;
 
-    public void Awake()
+    protected virtual void Awake()
     {
         if (_instance == null )// || _instance == this)
         {
@@ -43,6 +43,14 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         Debug.Log("Singleton: " + _instance.name + " destroyed" + " (" + _instance.GetType() + ")");
         _instance = null;
     }
-
-
 }
+
+public class SingletonPersistent<T> : Singleton<T> where T : MonoBehaviour
+{
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(gameObject);
+    }
+}
+

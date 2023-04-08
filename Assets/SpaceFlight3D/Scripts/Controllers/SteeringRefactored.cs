@@ -22,6 +22,7 @@ public class SteeringRefactored : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+
     // Kinematic Ship Rotating
     private void Update()
     {
@@ -39,6 +40,7 @@ public class SteeringRefactored : MonoBehaviour
         {
             Debug.LogWarning(gameObject + ": Lerp step is greater than 1"); // As we're lerping, step must be within 0-1 range
         }
+
         //transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
         //Debug.Log("Cur rot: " + transform.rotation.eulerAngles + " Target rot: " + targetRotation.eulerAngles + " step: " + Time.deltaTime * rotateSpeed);
