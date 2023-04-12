@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 namespace SpaceFlight3D.UI
 {
-    public class MenuUI : Singleton<MenuUI>
+    public class MenuUI : MonoBehaviour
     {
 
         public UnityEvent OnMenuOpen;
@@ -18,6 +18,40 @@ namespace SpaceFlight3D.UI
 
         public MenuWindow MainMenuWindow;
         public bool mainMenuActiveOnStart;
+
+        public CanvasGroup canvasGroup;
+
+        private void Start() => GameManager.StateChanged += GameStateChanged;
+        private void OnDestroy() => GameManager.StateChanged -= GameStateChanged;
+
+        void GameStateChanged(GameManager.GameState state)
+        {
+            switch(state)
+            {
+                case GameManager.GameState.MainMenu:
+                    EnableMenuUI();
+                    break;
+
+                default:
+                    DisableMenuUI();
+                    break;
+            }
+        }
+
+        void DisableMenuUI()
+        {
+            if(canvasGroup)
+            {
+                canvasGroup.interactable = false;
+            }
+        }
+        void EnableMenuUI()
+        {
+            if(canvasGroup)
+            {
+                canvasGroup.interactable = true;
+            }
+        }
 
         void InitializeUI()
         {

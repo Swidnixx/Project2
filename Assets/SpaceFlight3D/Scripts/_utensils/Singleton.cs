@@ -26,9 +26,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         }
         else
         {
-#if UNITY_EDITOR
-            Debug.LogError("Multiple instances of Singleton: " + Instance.GetType() + "; " + this.GetType());
-#endif
+            Destroy(gameObject);
         }
     }
 

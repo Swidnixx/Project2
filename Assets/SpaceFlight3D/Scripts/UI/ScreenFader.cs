@@ -10,11 +10,43 @@ public class ScreenFader : MonoBehaviour
     public float fadeSpeed = 1;
     public UnityEvent OnFade;
     Image image;
-
     public bool destroyOnFade = true;
+
+    private bool setup;
     private void Awake()
     {
-        image = GetComponent<Image>();
+        PrepareFader(true);
+    }
+
+    //private void Start()
+    //{
+    //    FadeImmediately();
+    //    Reveal();
+    //}
+
+    public void PrepareFader(bool forHide)
+    {
+        if (!setup)
+        {
+            gameObject.SetActive(true);
+            image = GetComponent<Image>();
+            setup = true; 
+        }
+
+        if(forHide)
+        {
+            RevealImmediately();
+        }
+        else
+        {
+            FadeImmediately();
+        }
+    }
+
+    public void SetFadeCallback(UnityAction callback)
+    {
+        OnFade.RemoveAllListeners();
+        OnFade.AddListener(callback);
     }
 
     public void Fade()
@@ -47,7 +79,7 @@ public class ScreenFader : MonoBehaviour
     IEnumerator SetColor(Color c)
     {
         Color startC = image.color;
-        for(float t=0; t<1; t+=Time.deltaTime * fadeSpeed)
+        for(float t=0; t<1; t+=Time.unscaledDeltaTime * fadeSpeed)
         {
             image.color = Color.Lerp(startC, c, t);
             yield return null;

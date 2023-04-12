@@ -1,24 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EasyFlyStart : MonoBehaviour
 {
-    public Rigidbody spaceship;
+    public GameObject startPanel;
+    public Text startText;
 
-    private void Start()
+    private void Awake() => LevelLoader.SceneRevealed += OnLevelStarted;
+
+    void OnLevelStarted()
     {
-        //Block();
+        startPanel.SetActive(true);
+
+        StartCoroutine(CountDown(3));
     }
 
-    public void Block()
+    IEnumerator CountDown(int seconds)
     {
-        spaceship.isKinematic = true;
-    }
+        while (seconds > 0)
+        {
+            startText.text = (--seconds).ToString();
+            yield return new WaitForSeconds(1);
+        }
 
-    public void StartFlight()
-    {
-        spaceship.isKinematic = false;
-        Destroy(this.gameObject);
+        startPanel.SetActive(false);
+
+        //PlayerController.Instance.EnableMovement();
+        GameManager.Instance.SetState(GameManager.GameState.Flying);
     }
 }

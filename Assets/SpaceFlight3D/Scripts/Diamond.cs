@@ -8,6 +8,9 @@ public class Diamond : MonoBehaviour
     public ParticleSystem destroyEffect;
     public UnityEvent onDestroy;
 
+    public DiamondType type;
+    public enum DiamondType {Big, Small }
+
     private void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.CompareTag("Player"))
@@ -19,6 +22,8 @@ public class Diamond : MonoBehaviour
             onDestroy?.Invoke();
 
             Destroy(gameObject);
+
+            ScoreKeeper.Instance.CollectDiamond(type);
         }
     }
 

@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     enum PlayerState
     {
@@ -12,6 +13,53 @@ public class PlayerController : MonoBehaviour
 
     PlayerState state = PlayerState.Grounded;
     Animator animator;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        GameManager.StateChanged += ChangeState;
+        LevelLoader.SceneLoaded += LevelLoaded;
+    }
+    private void OnDestroy() => GameManager.StateChanged -= ChangeState;
+    private void OnEnable() => GameManager.StateChanged += ChangeState;
+    private void OnDisable() => GameManager.StateChanged -= ChangeState;
+    
+    void LevelLoaded(string name)
+    {
+        Respawner.Instance.FindSpawnPos();
+        Respawner.Instance.Respawn();
+    }
+
+    private void DisableMovement()
+    {
+        ShipSetup.Instance.Disable();
+        ShipRotationSetup.Instance.Disable();
+    }
+
+    public void EnableMovement()
+    {
+        ShipSetup.Instance.Enable();
+        ShipRotationSetup.Instance.Enable();
+    }
+
+
+    void ChangeState(GameManager.GameState state)
+    {
+        switch (state)
+        {
+            default:
+                DisableMovement();
+                break;
+            case GameManager.GameState.Flying:
+                EnableMovement();
+                break;
+        }
+    }
+    internal void SpawnPlayer()
+    {
+        Respawner.Instance.FindSpawnPos();
+        Respawner.Instance.Respawn();
+    }
 
 
     void Start()

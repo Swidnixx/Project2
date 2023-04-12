@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShipSetup : MonoBehaviour
+public class ShipSetup : Singleton<ShipSetup>
 {
     public GameObject player;
     Rigidbody playerRb;
@@ -20,8 +20,19 @@ public class ShipSetup : MonoBehaviour
     public Dropdown selectionDropdown;
     public Modes initialMode;
 
+    internal void Disable()
+    {
+        playerRb.isKinematic = true;
+    }
+    internal void Enable()
+    {
+        playerRb.isKinematic = false;
+    }
+
     // List of components that are unique for current setup
     List<Component> currentSetUp;
+
+
 
     public PhysicsSettings options;
 
@@ -91,6 +102,8 @@ public class ShipSetup : MonoBehaviour
         handle.gameObject.SetActive(false);
         thrustButton.gameObject.SetActive(false);
 
+
+        InputHandler.Instance.Reset();
     }
 
     private void SetupGyro()

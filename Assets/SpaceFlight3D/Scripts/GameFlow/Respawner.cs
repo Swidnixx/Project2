@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Respawner : MonoBehaviour
+public class Respawner : Singleton<Respawner>
 {
     public Rigidbody player;
     public Vector3 rotation;
@@ -11,6 +11,20 @@ public class Respawner : MonoBehaviour
     Vector3 spawnPoint;
 
     RigidbodyConstraints rbConstraints;
+
+
+    public void FindSpawnPos()
+    {
+        var go = GameObject.Find("RespawnPos");
+        if(go)
+        {
+            SetSpawn(go.transform);
+        }
+        else
+        {
+            Debug.LogWarning("Respawner didn't find SpawnSpot!");
+        }
+    }
 
     private void Start()
     {
@@ -22,6 +36,7 @@ public class Respawner : MonoBehaviour
             Respawn();
         }
     }
+
 
     public void SetSpawn(Transform position)
     {

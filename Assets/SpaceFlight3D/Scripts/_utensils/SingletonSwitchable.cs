@@ -13,8 +13,15 @@ public class SingletonSwitchable<T> : MonoBehaviour where T : SingletonSwitchabl
 
     protected virtual void Awake()
     {
-        Debug.Log(typeof(T));
-        _instance = GetComponent<T>();
+        if (_instance == null)
+        {
+            Debug.Log("Singleton of type: " + typeof(T) + " was created");
+            _instance = GetComponent<T>();
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     public void Reset()
@@ -25,6 +32,7 @@ public class SingletonSwitchable<T> : MonoBehaviour where T : SingletonSwitchabl
 
     public void Switch( T newOne )
     {
+
         _instance = newOne;
     }
 }

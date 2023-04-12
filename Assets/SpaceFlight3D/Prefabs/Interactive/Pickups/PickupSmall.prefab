@@ -63,6 +63,7 @@ MonoBehaviour:
   onDestroy:
     m_PersistentCalls:
       m_Calls: []
+  type: 1
 --- !u!1 &2793222502783489949
 GameObject:
   m_ObjectHideFlags: 0

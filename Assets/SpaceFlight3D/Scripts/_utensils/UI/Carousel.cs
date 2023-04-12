@@ -5,6 +5,7 @@ namespace SpaceFlight3D.UI
 {
     public class Carousel : MonoBehaviour
     {
+        public MenuUI menuParent;
         public CarouselItem[] allItems;
         int current;
         bool transitionPending;
@@ -85,7 +86,7 @@ namespace SpaceFlight3D.UI
         {
             transitionPending = false;
             // When transition is done, select first active selectable item
-            MenuUI.Instance.RefreshSelectables();
+            menuParent.RefreshSelectables();
         }
 
         public void GoUp()

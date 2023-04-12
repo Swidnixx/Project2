@@ -36,6 +36,7 @@ public class EnginesController : MonoBehaviour
 
     public void OnDisable()
     {
+        if (engines == null || engines.Length == 0) return;
         foreach (var engine in engines)
         {
             engine.Push = false;

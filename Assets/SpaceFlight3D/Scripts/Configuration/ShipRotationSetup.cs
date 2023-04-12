@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShipRotationSetup : MonoBehaviour
+[DefaultExecutionOrder(-1)]
+public class ShipRotationSetup : Singleton<ShipRotationSetup>
 {
     public GameObject player;
     public enum RotationType { Auto, Manual }
@@ -17,21 +18,37 @@ public class ShipRotationSetup : MonoBehaviour
     // List of components that are unique for current setup
     List<Component> currentSetUp;
     SteerSettings settings = new SteerSettings();
-    SteeringRefactored steerScript;
+    public SteeringRefactored steerScript { get; private set; }
 
-    private void Start()
+    internal void Disable()
     {
+        steerScript.enabled = false;
+    }
+    public void Enable()
+    {
+        steerScript.enabled = true;
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+
         steerScript = player.GetComponent<SteeringRefactored>();
         if (steerScript)
         {
             settings.SetupSelf(steerScript);
             Destroy(steerScript);
-        } 
+        }
 
         currentSetUp = new List<Component>();
         Setup((int)initialType);
 
         selectionDropdown.onValueChanged.AddListener(Setup);
+    }
+
+    private void Start()
+    {
+
     }
     private void DestroyPreviousSetup()
     {
