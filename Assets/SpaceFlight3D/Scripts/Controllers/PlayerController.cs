@@ -26,8 +26,7 @@ public class PlayerController : Singleton<PlayerController>
     
     void LevelLoaded(string name)
     {
-        Respawner.Instance.FindSpawnPos();
-        Respawner.Instance.Respawn();
+        SpawnPlayer();
     }
 
     private void DisableMovement()
@@ -47,6 +46,10 @@ public class PlayerController : Singleton<PlayerController>
     {
         switch (state)
         {
+            case GameManager.GameState.MainMenu:
+                SpawnPlayer();
+                DisableMovement();
+                break;
             default:
                 DisableMovement();
                 break;

@@ -162,6 +162,9 @@ public class ShipSetup : Singleton<ShipSetup>
         Rigidbody rb;
         SpaceShipEngine engine;
 
+        public Slider gravitySlider;
+        public Text gravityText;
+
         public Slider mainForceSlider;
         public Text mainForceText;
         public Slider dragSlider;
@@ -172,6 +175,10 @@ public class ShipSetup : Singleton<ShipSetup>
             this.rb = rb;
             this.engine = engine;
 
+            SetGravity( - Physics.gravity.y);
+            gravitySlider.value = - Physics.gravity.y;
+            gravitySlider.onValueChanged.AddListener(SetGravity);
+
             SetMainForce(engine.MaxPower);
             mainForceSlider.value = engine.MaxPower;
             mainForceSlider.onValueChanged.AddListener(SetMainForce);
@@ -179,6 +186,12 @@ public class ShipSetup : Singleton<ShipSetup>
             SetDrag(rb.drag);
             dragSlider.value = rb.drag;
             dragSlider.onValueChanged.AddListener(SetDrag);
+        }
+
+        void SetGravity( float gravity )
+        {
+            Physics.gravity = - new Vector3( 0, gravity, 0);
+            gravityText.text = gravity.ToString("n2");
         }
 
         void SetMainForce( float force)

@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager>
     string currentLevel;
     string nextLevel;
 
-    GameState state;
+    public GameState State { get; private set; }
 
 
     private void Start()
@@ -27,18 +27,20 @@ public class GameManager : Singleton<GameManager>
 
     public void SetState(GameState state)
     {
-        if (this.state == state) return;
-        this.state = state;
+        if (this.State == state) return;
+        this.State = state;
 
         StateChanged?.Invoke(state);
 
-        switch (state)
-        {
-            case GameState.MainMenu:
-                break;
-            case GameState.Flying:
-                break;
-        }
+
+        //Need to use this to unify Game Events to be generated only from here
+        //switch (state)
+        //{
+        //    case GameState.MainMenu:
+        //        break;
+        //    case GameState.Flying:
+        //        break;
+        //}
 
     }
 
@@ -70,6 +72,7 @@ public class GameManager : Singleton<GameManager>
 
     public static void LoadLevel(string name)
     {
+
         LevelLoader.Instance.LoadLevel(name);
         Instance.SetState(GameState.Loading);
         Instance.currentLevel = name;

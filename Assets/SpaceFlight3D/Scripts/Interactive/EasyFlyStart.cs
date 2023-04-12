@@ -8,10 +8,38 @@ public class EasyFlyStart : MonoBehaviour
     public GameObject startPanel;
     public Text startText;
 
-    private void Awake() => LevelLoader.SceneRevealed += OnLevelStarted;
+    private void Awake()
+    { 
+        LevelLoader.SceneRevealed += OnLevelStarted;
+        GameManager.StateChanged += OnGameStateChange;
+    }
+    private void OnDestroy()
+    {
+        LevelLoader.SceneRevealed -= OnLevelStarted;
+        GameManager.StateChanged -= OnGameStateChange;
+    }
+    void OnGameStateChange(GameManager.GameState state)
+    {
+        switch(state)
+        {
+            case GameManager.GameState.MainMenu:
+            case GameManager.GameState.Loading:
+                StopFlyStart();
+                break;
+        }
+    }
+    void StopFlyStart()
+    {
+        StopAllCoroutines();
+        startPanel.SetActive(false);
+    }
 
     void OnLevelStarted()
     {
+        if(GameManager.Instance.State == GameManager.GameState.MainMenu)
+        {
+            return;
+        }
         startPanel.SetActive(true);
 
         StartCoroutine(CountDown(3));

@@ -48,22 +48,23 @@ public class LevelLoader : Singleton<LevelLoader>
         screenFader.SetFadeCallback(OnSceneRevealed);
         screenFader.Reveal();
 
+        //Needs to be moved to gameManager as callback
+        foreach (string s in mainMenuScenes)
+        {
+            if (targetSceneName == s)
+            {
+                GameManager.Instance.SetState(GameManager.GameState.MainMenu);
+                return; //beware here bcuz you ommit sending SceneLoaded event!
+            }
+        }
+        GameManager.Instance.SetState(GameManager.GameState.Pause);
+
+
         SceneLoaded?.Invoke(targetSceneName);
     }
 
     void OnSceneRevealed()
     {
-        //Needs to be moved to gameManager as callback
-        foreach(string s in mainMenuScenes)
-        {
-            if(targetSceneName == s)
-            {
-                GameManager.Instance.SetState(GameManager.GameState.MainMenu);
-                return; //break;
-            }
-        }
-        GameManager.Instance.SetState(GameManager.GameState.Pause);
-        //
 
         SceneRevealed?.Invoke();
 

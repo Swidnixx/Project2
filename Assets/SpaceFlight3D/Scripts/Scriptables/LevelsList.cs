@@ -11,16 +11,24 @@ public class LevelsList : ScriptableObject
 
     internal string GetNext(string name)
     {
-        Object current = scenes.First(s => s.name == name);
-        if (current)
+        try
         {
-            int currIndex = Array.IndexOf(scenes, current);
-
-            if (scenes.Length > currIndex + 1)
+            Object current = scenes.First(s => s.name == name);
+            if (current)
             {
-                return scenes[currIndex + 1].name;
+                int currIndex = Array.IndexOf(scenes, current);
+
+                if (scenes.Length > currIndex + 1)
+                {
+                    return scenes[currIndex + 1].name;
+                }
             }
         }
+        catch
+        {
+
+        }
+
 
         return "";
     }

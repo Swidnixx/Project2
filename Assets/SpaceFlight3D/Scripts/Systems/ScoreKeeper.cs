@@ -37,6 +37,7 @@ public class ScoreKeeper : Singleton<ScoreKeeper>
 
     void OnLevelLoaded(string levelName)
     {
+
         panel.SetActive(true);
 
         timeText.text = "0";
@@ -69,6 +70,7 @@ public class ScoreKeeper : Singleton<ScoreKeeper>
 
             default:
                 //paused
+                panel.SetActive(false);
                 StopAllCoroutines();
                 break;
         }
