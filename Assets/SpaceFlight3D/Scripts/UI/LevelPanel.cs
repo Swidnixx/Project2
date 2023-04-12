@@ -7,9 +7,9 @@ public class LevelPanel : MonoBehaviour
     public UnityEngine.UI.Button button;
     public Text levelNameText;
 
-    internal void Setup(Object s)
+    internal void Setup(string name)
     {
-        levelNameText.text = s.name;
+        levelNameText.text = name;
         button.onClick.AddListener(LoadLevel);
     }
 

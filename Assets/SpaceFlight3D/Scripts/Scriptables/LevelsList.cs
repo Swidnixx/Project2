@@ -7,22 +7,20 @@ using Object = UnityEngine.Object;
 public class LevelsList : ScriptableObject
 {
 
-    public UnityEngine.Object[] scenes;
+    public string[] scenes;
 
     internal string GetNext(string name)
     {
         try
         {
-            Object current = scenes.First(s => s.name == name);
-            if (current)
-            {
-                int currIndex = Array.IndexOf(scenes, current);
+
+                int currIndex = Array.IndexOf(scenes, name);
 
                 if (scenes.Length > currIndex + 1)
                 {
-                    return scenes[currIndex + 1].name;
+                    return scenes[currIndex + 1];
                 }
-            }
+            
         }
         catch
         {

@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: LevelsList
   m_EditorClassIdentifier: 
   scenes:
-  - {fileID: 102900000, guid: 79626ef863097654486b08a798700522, type: 3}
-  - {fileID: 102900000, guid: 50a4d5973ba724943b13b67f9ae9218e, type: 3}
-  - {fileID: 102900000, guid: e48babf7a3747f443858d570b22de12a, type: 3}
-  - {fileID: 102900000, guid: 8faa6222da0110f49931e920d0f90cd3, type: 3}
-  - {fileID: 102900000, guid: 8b988e80c15255047a69cfdcef2d496d, type: 3}
+  - FunSemiWideTrack
+  - FunNarrowTrack
+  - FunDeepTrack
+  - FunIntoDepths

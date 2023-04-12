@@ -15,7 +15,7 @@ public class LevelListFiller : MonoBehaviour
     {
         parent = transform;
 
-        foreach(Object s in list.scenes)
+        foreach(string s in list.scenes)
         {
             LevelPanel panel = Instantiate(prefab, parent);
             panel.Setup(s);
