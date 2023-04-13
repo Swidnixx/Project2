@@ -15,7 +15,7 @@ public class SteeringManual : SteeringRefactored
     protected override Quaternion SetTargetRotation(float leftRight)
     {
         //angleRotation += leftRight * rotateSpeed * maxAngle * Time.deltaTime;
-        angleRotation -= leftRight * rotateSpeed * Time.deltaTime * 60;
+        angleRotation -= leftRight * rotateSpeed * Time.unscaledDeltaTime * 100;
 
         angleRotation = Mathf.Clamp(angleRotation, -maxAngle, maxAngle);
 

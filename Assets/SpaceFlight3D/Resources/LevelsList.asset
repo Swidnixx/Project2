@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: LevelsList
   m_EditorClassIdentifier: 
   scenes:
-  - FunSemiWideTrack
+  - Fun1
   - FunNarrowTrack
   - FunDeepTrack
   - FunIntoDepths
+  - FunSemiWideTrack

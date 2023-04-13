@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 [DefaultExecutionOrder(-1)]
 public class ShipRotationSetup : Singleton<ShipRotationSetup>
@@ -20,14 +21,7 @@ public class ShipRotationSetup : Singleton<ShipRotationSetup>
     SteerSettings settings = new SteerSettings();
     public SteeringRefactored steerScript { get; private set; }
 
-    internal void Disable()
-    {
-        steerScript.enabled = false;
-    }
-    public void Enable()
-    {
-        steerScript.enabled = true;
-    }
+
 
     protected override void Awake()
     {
@@ -48,8 +42,17 @@ public class ShipRotationSetup : Singleton<ShipRotationSetup>
 
     private void Start()
     {
-
+        selectionDropdown.options = Enum.GetValues(typeof(RotationType)).Cast<RotationType>().Select( t => new Dropdown.OptionData(t.ToString())).ToList();
     }
+    internal void Disable()
+    {
+        steerScript.enabled = false;
+    }
+    public void Enable()
+    {
+        steerScript.enabled = true;
+    }
+
     private void DestroyPreviousSetup()
     {
         foreach (Component c in currentSetUp)
@@ -96,6 +99,7 @@ public class ShipRotationSetup : Singleton<ShipRotationSetup>
     {
         // Kinematic Ship rotation
         float rotateSpeed = 1;
+        float rotateCombackMultiplier = 1;
         float maxAngle = 45;
         // Dynamic sideways forces
         float force = 2;
@@ -108,6 +112,7 @@ public class ShipRotationSetup : Singleton<ShipRotationSetup>
         public void SetupScript(SteeringRefactored script)
         {
             script.rotateSpeed = rotateSpeed;
+            script.comeBackMultiplier = rotateCombackMultiplier;
             script.maxAngle = maxAngle;
             script.force = force;
             script.applyForceLocally = applyForceLocally;
@@ -118,6 +123,7 @@ public class ShipRotationSetup : Singleton<ShipRotationSetup>
         public void SetupSelf(SteeringRefactored script)
         {
             rotateSpeed = script.rotateSpeed;
+            rotateCombackMultiplier = script.comeBackMultiplier;
             maxAngle = script.maxAngle;
             force = script.force;
             applyForceLocally = script.applyForceLocally;
@@ -140,6 +146,9 @@ public class ShipRotationSetup : Singleton<ShipRotationSetup>
         public Text lateralForceText;
         public Toggle lateralForceLocally;
 
+        public Slider combackMultiplier;
+        public Text comebackText;
+
         public void Init(SteeringRefactored steerScript)
         {
             this.steerScript = steerScript;
@@ -149,6 +158,10 @@ public class ShipRotationSetup : Singleton<ShipRotationSetup>
 
             rotationSpeed.value = steerScript.rotateSpeed;
             speedText.text = steerScript.rotateSpeed.ToString();
+
+            combackMultiplier.value = steerScript.comeBackMultiplier;
+            comebackText.text = steerScript.comeBackMultiplier.ToString();
+            combackMultiplier.onValueChanged.AddListener(SetComebackSpeed);
 
             flipRotation.isOn = steerScript.flipLeftRight;
 
@@ -173,6 +186,11 @@ public class ShipRotationSetup : Singleton<ShipRotationSetup>
         {
             steerScript.rotateSpeed = speed;
             speedText.text = speed.ToString("n2");
+        }
+        public void SetComebackSpeed(float speed)
+        {
+            steerScript.comeBackMultiplier = speed;
+            comebackText.text = speed.ToString("n2");
         }
 
         public void SetRotationFlip(bool flip)

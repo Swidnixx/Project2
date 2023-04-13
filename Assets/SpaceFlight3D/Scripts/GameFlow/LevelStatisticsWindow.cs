@@ -14,8 +14,23 @@ public class LevelStatisticsWindow : Singleton<LevelStatisticsWindow>
     {
         base.Awake();
         LevelLoader.SceneLoaded += OnLevelLoaded;
+        GameManager.StateChanged += OnGameStateChange;
     }
-    void OnDestroy() => LevelLoader.SceneLoaded -= OnLevelLoaded;
+    void OnDestroy()
+    {
+        LevelLoader.SceneLoaded -= OnLevelLoaded;
+        GameManager.StateChanged -= OnGameStateChange;
+    } 
+
+    void OnGameStateChange(GameManager.GameState state)
+    {
+        switch(state)
+        {
+            case GameManager.GameState.MainMenu:
+                panel.SetActive(false);
+                break;
+        }
+    }
 
     void OnLevelLoaded(string name)
     {
