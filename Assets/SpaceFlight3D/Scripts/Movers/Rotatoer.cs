@@ -10,6 +10,6 @@ public class Rotatoer : MonoBehaviour
 
     private void Update()
     {
-        transform.Rotate(axis * Time.deltaTime * speed);
+        transform.Rotate(axis * Time.deltaTime * speed, Space.Self);
     }
 }

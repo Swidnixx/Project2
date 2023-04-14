@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SteeringManual : SteeringRefactored
 {
-    float angleRotation = 0;
 
     //this needs to be done not to apply any lateral forces
     private void OnEnable()
@@ -15,19 +14,19 @@ public class SteeringManual : SteeringRefactored
     protected override Quaternion SetTargetRotation(float leftRight)
     {
         //angleRotation += leftRight * rotateSpeed * maxAngle * Time.deltaTime;
-        angleRotation -= leftRight * rotateSpeed * Time.unscaledDeltaTime * 100;
+        rotation -= leftRight * rotateSpeed * Time.unscaledDeltaTime * 100;
 
-        angleRotation = Mathf.Clamp(angleRotation, -maxAngle, maxAngle);
+        rotation = Mathf.Clamp(rotation, -maxAngle, maxAngle);
 
-        if(angleRotation == 360)
+        if(rotation == 360)
         {
-            angleRotation = 0;
+            rotation = 0;
         }
-        else if(angleRotation == -360)
+        else if(rotation == -360)
         {
-            angleRotation = 0;
+            rotation = 0;
         }
 
-        return Quaternion.AngleAxis(angleRotation * (flipLeftRight ? -1 : 1), axis);
+        return Quaternion.AngleAxis(rotation * (flipLeftRight ? -1 : 1), axis);
     }
 }

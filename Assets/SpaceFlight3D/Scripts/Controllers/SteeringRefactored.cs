@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,8 +38,13 @@ public class SteeringRefactored : MonoBehaviour
         //Debug.Log("Cur rot: " + transform.rotation.eulerAngles + " Target rot: " + targetRotation.eulerAngles + " step: " + Time.deltaTime * rotateSpeed);
     }
 
-    float rotation;
+    protected float rotation;
 
+    internal void Reset()
+    {
+        rotation = 0;
+        //transform.rotation = Quaternion.Euler(Vector3.zero);
+    }
 
     protected virtual Quaternion SetTargetRotation(float leftRight)
     {

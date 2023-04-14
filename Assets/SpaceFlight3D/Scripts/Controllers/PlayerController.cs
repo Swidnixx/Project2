@@ -14,6 +14,10 @@ public class PlayerController : Singleton<PlayerController>
     PlayerState state = PlayerState.Grounded;
     Animator animator;
 
+    public Transform[] visibleObjects;
+
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -23,10 +27,39 @@ public class PlayerController : Singleton<PlayerController>
     private void OnDestroy() => GameManager.StateChanged -= ChangeState;
     private void OnEnable() => GameManager.StateChanged += ChangeState;
     private void OnDisable() => GameManager.StateChanged -= ChangeState;
-    
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+
+    }
+
     void LevelLoaded(string name)
     {
         SpawnPlayer();
+    }
+
+    public void Hide()
+    {
+        foreach (var item in visibleObjects)
+        {
+            item.gameObject.SetActive(false); 
+        }
+        DisableMovement();
+        SteeringRefactored steerScript = GetComponent<SteeringRefactored>();
+        if (steerScript)
+        {
+            steerScript.Reset();
+        }
+    }
+
+    public void Show()
+    {
+        foreach (var item in visibleObjects)
+        {
+            item.gameObject.SetActive(true); 
+        }
+        EnableMovement();
     }
 
     private void DisableMovement()
@@ -64,11 +97,6 @@ public class PlayerController : Singleton<PlayerController>
         Respawner.Instance.Respawn();
     }
 
-
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
 
 
     private void OnCollisionExit(Collision collision)

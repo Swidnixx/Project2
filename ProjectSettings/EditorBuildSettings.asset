@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/SpaceFlight3D/Scenes/SampleSceneWith2dBackground.unity
     guid: 3abe3bf106d4ebf47a4b874b133f12d1
   - enabled: 1
-    path: Assets/SpaceFlight3D/Scenes/FunTests/Fun1.unity
-    guid: 79626ef863097654486b08a798700522
-  - enabled: 1
     path: Assets/SpaceFlight3D/Scenes/FunTests/OtherSide.unity
     guid: 83360bf84e996234798dd600439daa50
   - enabled: 1
@@ -32,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SpaceFlight3D/Scenes/FunTests/FunIntoDepths.unity
     guid: 8b988e80c15255047a69cfdcef2d496d
+  - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/FunTests/SegmentTrack.unity
+    guid: 79626ef863097654486b08a798700522
   m_configObjects: {}
