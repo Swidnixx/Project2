@@ -809,7 +809,7 @@ MonoBehaviour:
       m_Calls: []
   MainMenuWindow: {fileID: 2015717185}
   mainMenuActiveOnStart: 1
-  canvasGroup: {fileID: 93642083}
+  canvasGroup: {fileID: 0}
 --- !u!114 &93642080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5565,7 +5565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23ea98ec8dc07a42b3a6c9227c2d222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuParent: {fileID: 93642079}
+  menuParent: {fileID: 0}
   allItems:
   - {fileID: 1978107665}
   - {fileID: 1466787024}
@@ -25214,6 +25214,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523777240843395697, guid: 59d71c6c59710984ca515de8d77ae862,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523777240843395697, guid: 59d71c6c59710984ca515de8d77ae862,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523777240843395697, guid: 59d71c6c59710984ca515de8d77ae862,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523777240843395697, guid: 59d71c6c59710984ca515de8d77ae862,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631008466441256277, guid: 59d71c6c59710984ca515de8d77ae862,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8957656460859860616, guid: fa463ffca768ee44baf8c6d76cfb9e44,
+        type: 3}
+    - target: {fileID: 7631008466441256277, guid: 59d71c6c59710984ca515de8d77ae862,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59d71c6c59710984ca515de8d77ae862, type: 3}

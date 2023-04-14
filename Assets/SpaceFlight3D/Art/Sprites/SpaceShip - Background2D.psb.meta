@@ -99,11 +99,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 8
+      x: 4
       y: 5336
-      width: 4088
+      width: 4096
       height: 206
-    spriteID: 1b7d56fb1b9ee094e94ee5219764d8ef
+    spriteID: dba99ba483369af4db1391dfc4fc6fe4
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -125,7 +125,7 @@ ScriptedImporter:
       y: 5083
       width: 267
       height: 212
-    spriteID: 612d1b9d3c487ad4aa61514d8f623fab
+    spriteID: 084e37ba51b77104f80f225e484c4b06
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -143,11 +143,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 8
+      x: 4
       y: 5083
-      width: 4088
+      width: 4096
       height: 245
-    spriteID: d8d2ca7293f03b9478f45e3896a87191
+    spriteID: aa843bb5424042141ba276b855b89abc
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -165,11 +165,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 8
+      x: 4
       y: 4424
-      width: 4088
+      width: 4096
       height: 651
-    spriteID: a68c381e2a4f9e64f9f8556d3524147a
+    spriteID: ae28d3717f38de141b7e31dcc98e2262
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -187,11 +187,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 8
+      x: 4
       y: 3585
-      width: 4088
+      width: 4096
       height: 831
-    spriteID: 410866d39be6e80408c599b164ea709b
+    spriteID: 7a16cb9571eb5904ca9ca5a02290152b
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -209,11 +209,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 9
+      x: 4
       y: 2060
-      width: 4087
+      width: 4096
       height: 1517
-    spriteID: 4d83448cf4fb7944880dda4fdd368594
+    spriteID: 4b08cc7d8dd1a8a46adc8307a47e952f
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -231,11 +231,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 8
+      x: 4
       y: 4
-      width: 4088
+      width: 4096
       height: 2048
-    spriteID: 65fdcbcd50528694690e9723b6ff47e2
+    spriteID: 711b7987b18573c418ccec89cf026bca
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -269,49 +269,49 @@ ScriptedImporter:
     spriteName: Foreground
     isGroup: 0
     parentIndex: -1
-    spriteID: 1b7d56fb1b9ee094e94ee5219764d8ef
+    spriteID: dba99ba483369af4db1391dfc4fc6fe4
     layerID: 42
     mosaicPosition: {x: 4, y: 5336}
   - name: SpaceShip
     spriteName: SpaceShip
     isGroup: 0
     parentIndex: -1
-    spriteID: 612d1b9d3c487ad4aa61514d8f623fab
+    spriteID: 084e37ba51b77104f80f225e484c4b06
     layerID: 52
     mosaicPosition: {x: 4108, y: 5083}
   - name: Shadow
     spriteName: Shadow
     isGroup: 0
     parentIndex: -1
-    spriteID: d8d2ca7293f03b9478f45e3896a87191
+    spriteID: aa843bb5424042141ba276b855b89abc
     layerID: 37
     mosaicPosition: {x: 4, y: 5083}
   - name: "Wype\u0142nienie wzorkiem 4"
     spriteName: "Wype\u0142nienie wzorkiem 4"
     isGroup: 0
     parentIndex: -1
-    spriteID: a68c381e2a4f9e64f9f8556d3524147a
+    spriteID: ae28d3717f38de141b7e31dcc98e2262
     layerID: 74
     mosaicPosition: {x: 4, y: 4424}
   - name: MontainsClose
     spriteName: MontainsClose
     isGroup: 0
     parentIndex: -1
-    spriteID: 410866d39be6e80408c599b164ea709b
+    spriteID: 7a16cb9571eb5904ca9ca5a02290152b
     layerID: 23
     mosaicPosition: {x: 4, y: 3585}
   - name: MountainsFar
     spriteName: MountainsFar
     isGroup: 0
     parentIndex: -1
-    spriteID: 4d83448cf4fb7944880dda4fdd368594
+    spriteID: 4b08cc7d8dd1a8a46adc8307a47e952f
     layerID: 72
     mosaicPosition: {x: 4, y: 2060}
   - name: "Wype\u0142nienie wzorkiem 2 kopia 2"
     spriteName: "Wype\u0142nienie wzorkiem 2 kopia 2"
     isGroup: 0
     parentIndex: -1
-    spriteID: 65fdcbcd50528694690e9723b6ff47e2
+    spriteID: 711b7987b18573c418ccec89cf026bca
     layerID: 66
     mosaicPosition: {x: 4, y: 4}
   characterData:
