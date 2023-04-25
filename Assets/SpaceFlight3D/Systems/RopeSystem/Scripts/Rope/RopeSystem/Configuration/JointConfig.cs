@@ -43,6 +43,17 @@ namespace RopeMechanim
         public Vector3 axis = Vector3.forward;
         public Vector3 connectedAnchor;
 
+        [Header("Additional")]
+        public float pushDownForce;
+
+        public virtual void ConfigureAdditional(GameObject jointObject)
+        {
+            ConstantForce cf = jointObject.GetComponent<ConstantForce>();
+            if(cf)
+            {
+                cf.force = new Vector3(0, -pushDownForce, 0);
+            }
+        }
 
         public virtual void ConfigureRigidbody(Rigidbody rb)
         {

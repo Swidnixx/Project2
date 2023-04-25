@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Respawner : Singleton<Respawner>
 {
+    public UnityEvent OnRespawn;
+
     public Rigidbody player;
     public Vector3 rotation;
     public bool setOnStart;
@@ -45,6 +48,7 @@ public class Respawner : Singleton<Respawner>
 
     public void Respawn()
     {
+        OnRespawn.Invoke();
 
         player.transform.rotation = Quaternion.Euler(rotation);
         player.transform.position = spawnPoint;

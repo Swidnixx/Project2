@@ -10,7 +10,7 @@ namespace RopeMechanim
         private bool configured;
 
         public Rigidbody Rb { get; private set; }
-        private Joint Joint { get; set; }
+        public Joint Joint { get; private set; }
 
         public bool IsHook { get; set; }
         public RopeJoint UpperOne { get; set; }
@@ -23,6 +23,12 @@ namespace RopeMechanim
             //private set => Joint.anchor = transform.InverseTransformPoint(value);
             private set => Joint.anchor = Vector3.Scale(value, new Vector3(1 / transform.localScale.x, 1 / transform.localScale.y, 1 / transform.localScale.z));
         }
+
+        public float Limit
+        {
+            get { return ((ConfigurableJoint)Joint).linearLimit.limit; }
+        }
+
         public static implicit operator bool(RopeJoint j) => j != null;
         //public static implicit operator Transform(RopeJoint2 j) => j.rb.transform;
         public static bool operator true(RopeJoint j) => j != null;
@@ -43,6 +49,13 @@ namespace RopeMechanim
         {
             Assert.IsTrue(configured);
             Anchor = anchor;
+        }
+        public void SetLimit(float limit)
+        {
+            Assert.IsTrue(configured);
+            var linearLimit = ((ConfigurableJoint)Joint).linearLimit;
+            linearLimit.limit = limit;
+            ((ConfigurableJoint)Joint).linearLimit = linearLimit;
         }
         public void SetDynamic()
         {
@@ -75,6 +88,7 @@ namespace RopeMechanim
                 Joint = this.gameObject.AddComponent(config.GetJointType()) as Joint;
                 config.ConfigureJoint(Joint);
                 config.ConfigureRigidbody(Rb);
+                config.ConfigureAdditional(gameObject);
             }
 
             Joint.connectedBody = rigidbody;

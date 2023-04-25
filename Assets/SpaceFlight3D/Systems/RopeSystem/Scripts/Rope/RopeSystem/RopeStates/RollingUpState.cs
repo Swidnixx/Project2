@@ -19,7 +19,7 @@ namespace RopeMechanim
             //Vector3 newPos = Vector3.MoveTowards(ropeMechanim.lastJoint.position, ropeMechanim.transform.position, ropeMechanim.dropSpeed * Time.deltaTime);
             //lastJointRb.MovePosition(newPos);
 
-            if (ropeMechanim.ropeBuilder.UpdateLastJoint(Time.deltaTime * ropeMechanim.dropSpeed * -1))//|| (ropeMechanim.lastJoint.position - ropeMechanim.transform.position).magnitude < 0.1) //
+            if (ropeMechanim.ropeBuilder.UpdateLastJoint(Time.unscaledDeltaTime * ropeMechanim.dropSpeed * -1))//|| (ropeMechanim.lastJoint.position - ropeMechanim.transform.position).magnitude < 0.1) //
             {
                 if (ropeMechanim.lastJoint == ropeMechanim.hook)
                 {

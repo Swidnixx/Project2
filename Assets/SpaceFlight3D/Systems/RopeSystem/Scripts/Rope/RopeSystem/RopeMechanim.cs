@@ -29,13 +29,13 @@ namespace RopeMechanim
 
         void Awake()
         {
-            ChangeState(new RolledUpState(this));
             joints = new List<RopeJoint>();
             rb = GetComponent<Rigidbody>();
         }
-        void Start()
+        public void Start()
         {
             ropeBuilder.ResetBuilder(this);
+            ChangeState(new RolledUpState(this));
         }
 
         void Update()

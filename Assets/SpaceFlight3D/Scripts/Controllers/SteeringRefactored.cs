@@ -31,9 +31,10 @@ public class SteeringRefactored : MonoBehaviour
         if (InputHandler.Instance == null) return;
         //Debug.Log(InputHandler.Instance);
         float leftRight = InputHandler.Instance.LeftRight;
+        AdjustRotation(leftRight);
+        //Quaternion targetRotation = SetTargetRotation(leftRight);
+       // transform.rotation = targetRotation;
 
-        Quaternion targetRotation = SetTargetRotation(leftRight);
-        transform.rotation = targetRotation;
         //transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
         //Debug.Log("Cur rot: " + transform.rotation.eulerAngles + " Target rot: " + targetRotation.eulerAngles + " step: " + Time.deltaTime * rotateSpeed);
     }
@@ -45,7 +46,11 @@ public class SteeringRefactored : MonoBehaviour
         rotation = 0;
         //transform.rotation = Quaternion.Euler(Vector3.zero);
     }
+    protected virtual void AdjustRotation(float leftRight)
+    {
 
+        transform.Rotate(Vector3.forward * leftRight * rotateSpeed * Time.deltaTime * 100);
+    }
     protected virtual Quaternion SetTargetRotation(float leftRight)
     {
         if(leftRight != 0)

@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: LevelsList
   m_EditorClassIdentifier: 
   scenes:
+  - TestLadunkow
+  - SciFiCity1
+  - SciFiCity2
+  - FunIntoDepths
+  - SegmentTrack
   - FunSemiWideTrack
   - FunNarrowTrack
   - FunDeepTrack
-  - FunIntoDepths
-  - SegmentTrack

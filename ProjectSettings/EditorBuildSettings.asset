@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SpaceFlight3D/Scenes/FunTests/SegmentTrack.unity
     guid: 79626ef863097654486b08a798700522
+  - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/FunTests/SciFiCity1.unity
+    guid: 48553380922e5244891659a47a55071f
+  - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/FunTests/SciFiCity2.unity
+    guid: 65d16fc20bd29e44eb02b3c65bc4609e
+  - enabled: 1
+    path: Assets/SpaceFlight3D/Scenes/FunTests/TestLadunkow.unity
+    guid: 923a0c8648cb83046bba952a8c2afa90
   m_configObjects: {}

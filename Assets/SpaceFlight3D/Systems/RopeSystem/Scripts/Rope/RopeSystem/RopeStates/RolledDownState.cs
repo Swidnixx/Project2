@@ -21,6 +21,11 @@ namespace RopeMechanim
             }
         }
 
+        public override void OnExit()
+        {
+            // ropeMechanim.hook.GetComponent<RopeHook>().Reset
+        }
+
         public override void Toggle()
         {
             ropeMechanim.ChangeState(new RollingUpState(ropeMechanim));

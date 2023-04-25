@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49deb2de9d4a06f4c81aedb3c104a8c2, type: 3}
+  m_Name: SpiralSegment
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6369087510879195206, guid: 8c930e91474ee764f9ebd3fbf1437e74, type: 3}
+  direction: 2
+  entrance: {x: -50.42, y: 0, z: 0}
+  exit: {x: 50.43, y: 0, z: 0}

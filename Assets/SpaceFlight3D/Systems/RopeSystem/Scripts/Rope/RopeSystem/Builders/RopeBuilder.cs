@@ -15,9 +15,10 @@ namespace RopeMechanim
 
         [SerializeField] JointConfig hookSetup;
         [SerializeField] JointConfig jointsSetup;
+        [SerializeField] JointConfig lastJointSetup;
 
         RopeJoint hook => joints.Find(j => j.IsHook);
-        RopeJoint lastJoint => joints.Last();
+        protected RopeJoint lastJoint => joints.Last();
 
         #region Builder Initialization
         public virtual void ResetBuilder(RopeMechanim rope)
@@ -29,8 +30,12 @@ namespace RopeMechanim
             {
                 foreach (RopeJoint joint in joints)
                 {
-                    Destroy(joint.gameObject);
+                    if (joint)
+                    {
+                        Destroy(joint.gameObject); 
+                    }
                 }
+                joints.Clear();
             }
 
             Assert.AreEqual(0, joints.Count);
@@ -68,11 +73,18 @@ namespace RopeMechanim
         #endregion
 
         #region Updating
-        public void BuildJoint()
+        public void BuildJoint(bool last)
         {
             RopeJoint newJoint = factory.SpawnJoint();
 
-            ConfigureConnection(newJoint, jointsSetup);
+            if (!last)
+            {
+                ConfigureConnection(newJoint, jointsSetup); 
+            }
+            else
+            {
+                ConfigureConnection(newJoint, lastJointSetup);
+            }
             ConfigureNeighbours(newJoint);
             ConfigureParent(newJoint);
             ConfigurePreviousJoint(newJoint);
@@ -81,10 +93,11 @@ namespace RopeMechanim
             joints.Add(newJoint);
 
         }
-        public bool UpdateLastJoint(float deltaPosition)
+        public virtual bool UpdateLastJoint(float deltaPosition)
         {
             //Debug.Log($"Current anchor y: {lastJoint.Anchor.y}; DeltaPos: {deltaPosition}");
             Vector3 lastJointAnchor = lastJoint.Anchor; 
+
             if (lastJointAnchor.y + deltaPosition < 0)
             {
                 lastJointAnchor.y = 0;
@@ -94,6 +107,7 @@ namespace RopeMechanim
             lastJoint.SetAnchor( lastJointAnchor );
             return false;
         }
+
         public void DestroyLastJoint()
         {
             RopeJoint tmp = lastJoint;

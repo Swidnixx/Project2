@@ -17,12 +17,12 @@ MonoBehaviour:
   isKinematic: 0
   useGravity: 1
   mass: 1
-  drag: 1
+  drag: 0.25
   angularDrag: 10
   interpolate: 0
-  constraints1: 2
-  constraints2: 64
-  constraints3: 32
+  constraints1: 8
+  constraints2: 0
+  constraints3: 0
   enablePreprocessing: 0
   massScale: 1
   connectedMassScale: 1
@@ -32,13 +32,13 @@ MonoBehaviour:
   projectionMode: 1
   projectionDistance: 10
   Xmotion: 0
-  Ymotion: 0
+  Ymotion: 1
   Zmotion: 0
-  XangularMotion: 2
+  XangularMotion: 0
   YangularMotion: 0
-  ZangularMotion: 0
-  linearLimit: 0.1
+  ZangularMotion: 2
+  linearLimit: 0.25
   linearLimitBounciness: 0
   linearLimitContactDistance: 0
-  spring: 20000
-  damper: 20
+  spring: 2000
+  damper: 200
