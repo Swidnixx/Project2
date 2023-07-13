@@ -89,11 +89,13 @@ public class GameManager : Singleton<GameManager>
     public static void PauseGame()
     {
         Time.timeScale = 0;
+        Instance.SetState(GameState.Pause);
     }
 
     public static void ResumeGame()
     {
         Time.timeScale = 1;
+        Instance.SetState(GameState.Flying);
     }
         #endregion
     

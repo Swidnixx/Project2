@@ -42,5 +42,7 @@ public class SpaceShipDestroyer : MonoBehaviour
         //thruster.enabled = false;
         //steer.enabled = false;
         onCrash?.Invoke();
+
+        //Debug.Break();
     }
 }

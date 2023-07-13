@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuController : Singleton<MenuController>
+public class UIController : Singleton<UIController>
 {
     public GameObject handMenu;
+    public GameObject buttonsPanel;
 
     protected override void Awake()
     {
@@ -18,12 +19,18 @@ public class MenuController : Singleton<MenuController>
         switch (state)
         {
             case GameManager.GameState.Pause:
+                EnableHandMenu(true);
+                buttonsPanel.SetActive(false);
+                break;
+
             case GameManager.GameState.Flying:
                 EnableHandMenu(true);
+                buttonsPanel.SetActive(true);
                 break; 
 
             default:
                 EnableHandMenu(false);
+                buttonsPanel.SetActive(false);
                 break;
         }
     }

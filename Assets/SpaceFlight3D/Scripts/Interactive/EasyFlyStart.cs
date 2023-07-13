@@ -22,6 +22,12 @@ public class EasyFlyStart : MonoBehaviour
     {
         switch(state)
         {
+            case GameManager.GameState.Flying:
+                if(startPanel.activeSelf)
+                {
+                    GameManager.Instance.SetState(GameManager.GameState.Pause);
+                }
+                break;
             case GameManager.GameState.MainMenu:
             case GameManager.GameState.Loading:
                 StopFlyStart();
